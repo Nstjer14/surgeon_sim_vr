@@ -69,6 +69,8 @@ fprintf('a) Accuracy = %f\n', acc);
 % (b) classify instances in tst_xy_126 by assuming a uniform prior over the space of hypotheses, 
 % and use the corresponding label file tst_xy_126_class to calculate the accuracy;
 %Basically the same as before with new data set and assuming uniform prior
+%(meaning we do not multiply with anything when calculating the probability
+%of x belonging to class X or Y) 
 evalX_b = gauss(mixX.centres, mixX.covars, tst_xy_126);
 evalY_b = gauss(mixY.centres, mixY.covars, tst_xy_126);
 
@@ -98,5 +100,46 @@ figure('Name', '1b) Test Data')
 plot(sortedX_b(:,1), sortedX_b(:,2),'.r',...
     sortedY_b(:,1), sortedY_b(:,2),'.y')
 
-acc_b = 1-misclass/length(tst_xy_126_class(:,1));
+acc_b = 1-misclass_b/length(tst_xy_126_class(:,1));
 fprintf('b) Accuracy = %f\n', acc_b);
+
+
+%(c) classify instances in tst_xy_126 by assuming a prior probability of 0.9 for Class x and 0.1 for Class y, and use the corresponding label file tst_xy_126_class to calculate the accuracy; compare the results with those of (b).
+%Again, same task just multiply evalX and evalY with 0.9 and 0.1
+%accordingly.
+
+evalX_c = 0.9*gauss(mixX.centres, mixX.covars, tst_xy_126);
+evalY_c = 0.1*gauss(mixY.centres, mixY.covars, tst_xy_126);
+
+numX_c = 0;
+numY_c = 0;
+misclass_c = 0;
+
+for ii=1:length(evalX_c)
+ if evalX_c(ii) < evalY_c(ii)
+    label_c(ii) = 1;
+    numY_c = numY_c+1;
+    sortedY_c(numY,:) = tst_xy(ii,:);
+        if tst_xy_126_class(ii) == 1
+            misclass_c = misclass_c + 1;
+        end
+ else
+    label_c(ii) = 2;
+    numX_c = numX_c +1;
+    sortedX_c(numX,:) = tst_xy(ii,:);
+    if tst_xy_126_class(ii) == 2
+        misclass_c = misclass_c + 1;
+    end
+ end
+end
+
+figure('Name', '1c) Test Data')
+plot(sortedX_c(:,1), sortedX_c(:,2),'.r',...
+    sortedY_c(:,1), sortedY_c(:,2),'.y')
+
+acc_c = 1-misclass_c/length(tst_xy_126_class(:,1));
+fprintf('c) Accuracy = %f\n', acc_c);
+
+
+% We can see that the accuracy is higher when calculating with a prior
+% probability of 0.9 for class X and 0.1 for class Y. 
