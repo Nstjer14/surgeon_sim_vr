@@ -69,7 +69,7 @@ end
 
 
 %Then we plot the test data
-figure('Name', '1a) Test data', 'NumberTitle', 'off')
+figure('Name', '1a) Test data')
 plot(sortedX(:,1), sortedX(:,2), '.b',...
     sortedY(:,1), sortedY(:,2),'.r')
 
