@@ -6,7 +6,10 @@
 % Lecture: 3 Parametric and nonparametric methods
 % Dependencies: netlab.
 % Matlab version: 2017a
-% Functionality: XXX
+% Functionality: Chooses three classes from a 10 class database and reduces
+% the dimensions to 2 using the PCA method (Principal component analysis).
+%Then performs a 3 class classification of the
+% classes based on the generated 2 dimensional data.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 load Data/mnist_all; %Load All data
