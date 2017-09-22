@@ -73,8 +73,7 @@ numSix = 0;
 numEight = 0;
 misclass = 0;
 for ii=1:length(testY)
-    largest = max([evalFive(ii),evalSix(ii),evalEight(ii)]); %By using max(X) we get the largest element in X. 
-    %And for matrices this is a row vector with the largest element from each column
+    largest = max([evalFive(ii),evalSix(ii),evalEight(ii)]); %By using max() we get the largest
     if largest == evalFive(ii)
         numFive = numFive +1;
         classres = 5;
