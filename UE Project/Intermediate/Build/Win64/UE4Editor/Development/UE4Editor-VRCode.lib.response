@@ -1,0 +1,26 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-VRCode.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\PCH.VRCode.h.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\IPickupable.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\PickupCube.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\TP_VRPawn.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\TP_VRSimplePawn.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\VRCode.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\VRCodeGameModeBase.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\VRHand.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\GamepadVRPawn.gen.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\IPickupable.gen.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\PickupCube.gen.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\VRCode.init.gen.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\VRCodeGameModeBase.gen.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\VRHand.gen.cpp.obj"
+"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\VRCode\VRPawn.gen.cpp.obj"
+"D:\Stuff\UEVersions\UE_4.17\Engine\Intermediate\Build\Win64\UE4Editor\Development\VRCode\PCLaunch.rc.res"
+"D:\Stuff\UEVersions\UE_4.17\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
+/OUT:"D:\Stuff\UE-VR-Code-Sample-ue-4.16.2 4.17\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-VRCode.lib"

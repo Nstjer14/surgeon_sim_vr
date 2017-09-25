@@ -1,0 +1,30 @@
+Begin Object Class=/Script/Engine.StaticMesh Name="BeaconDirection"
+   Begin Object Class=/Script/Engine.BodySetup Name="BodySetup_5"
+   End Object
+   Begin Object Class=/Script/UnrealEd.FbxStaticMeshImportData Name="FbxStaticMeshImportData_1"
+   End Object
+   Begin Object Class=/Script/Engine.NavCollision Name="NavCollision_2"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_0"
+   End Object
+   Begin Object Name="BodySetup_5"
+      AggGeom=(ConvexElems=((VertexData=((X=118.663132,Y=0.736885,Z=-0.112682),(X=118.663132,Y=-0.736885,Z=-0.112315),(X=118.663132,Y=-0.736883,Z=3.781713),(X=118.663132,Y=0.736889,Z=3.780794),(X=-50.112495,Y=-20.762505,Z=-0.100000),(X=-50.099995,Y=20.752111,Z=-0.107326),(X=-50.112495,Y=20.762505,Z=3.750000),(X=-50.112495,Y=-20.762505,Z=3.812500),(X=-20.775007,Y=50.099995,Z=-0.100000),(X=69.275017,Y=50.125000,Z=-0.100000),(X=69.275017,Y=50.099987,Z=3.750000),(X=-20.775007,Y=50.099995,Z=3.812500),(X=69.274994,Y=-50.100002,Z=-0.100000),(X=-20.752102,Y=-50.100002,Z=-0.104350),(X=-20.774996,Y=-50.100006,Z=3.750000),(X=69.274994,Y=-50.100002,Z=3.812500),(X=118.718750,Y=0.656250,Z=3.812500),(X=118.718750,Y=-0.656250,Z=3.750000)),ElemBox=(Min=(X=-50.112495,Y=-50.100006,Z=-0.112682),Max=(X=118.718750,Y=50.125000,Z=3.812500),IsValid=1))))
+      DefaultInstance=(CollisionProfileName="BlockAll",ObjectType=ECC_WorldStatic)
+   End Object
+   Begin Object Name="FbxStaticMeshImportData_1"
+   End Object
+   Begin Object Name="NavCollision_2"
+   End Object
+   Begin Object Name="SceneThumbnailInfo_0"
+   End Object
+   SourceModels(0)=(BuildSettings=(bRecomputeNormals=False),ScreenSize=1.000000)
+   SectionInfoMap=(Map=((0, ())))
+   StaticMaterials(0)=(MaterialInterface=Material'/Engine/EngineMaterials/WorldGridMaterial.WorldGridMaterial',MaterialSlotName="WorldGridMaterial",UVChannelData=(bInitialized=True,LocalUVDensities[0]=91.309036,LocalUVDensities[1]=93.734444))
+   LightmapUVDensity=93.734444
+   LightMapResolution=64
+   LightMapCoordinateIndex=1
+   AssetImportData=FbxStaticMeshImportData'FbxStaticMeshImportData_1'
+   ThumbnailInfo=SceneThumbnailInfo'SceneThumbnailInfo_0'
+   EditorCameraPosition=(bIsSet=True,CamOrbitPoint=(X=34.281567,Y=-0.000004,Z=1.841500),CamOrbitZoom=(X=-40.330158,Y=178.956787,Z=57.664124),CamOrbitRotation=(Pitch=-17.450033,Yaw=-192.700165,Roll=-0.000001))
+   ExtendedBounds=(Origin=(X=34.281567,Y=-0.000004,Z=1.841500),BoxExtent=(X=84.281563,Y=50.000000,Z=1.841500),SphereRadius=84.302536)
+End Object
