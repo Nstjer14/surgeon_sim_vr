@@ -152,7 +152,6 @@ sympy-plots-for-*.tex/
 *~
 *#
 *.swp
-*.ini
 *.html
 *.vhi
 *.wdb
