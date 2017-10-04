@@ -1,4 +1,8 @@
-plot(trn5(:,1),trn5(:,2),'.r',trn6(:,1),trn6(:,2),'.b',trn8(:,1), trn8(:,2),'.y'); %Plotting the training data
+clear all;
+close all;
+
+load 2D3classes.mat
+plot(trn5(:,1),trn5(:,2),'.r',trn6(:,1),trn6(:,2),'.b',trn8(:,1), trn8(:,2),'.g'); %Plotting the training data
 
 trainingdata = double([trn5;trn6;trn8]); %combining all the data into one file 
 X = trainingdata(:,1:2);
