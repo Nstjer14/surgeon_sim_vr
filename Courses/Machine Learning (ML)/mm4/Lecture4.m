@@ -109,3 +109,6 @@ legend('Five','Six','Eight')
 figure('Name','PCA - 100% correct data','NumberTitle','off')
 plot(testFive(:,1),testFive(:,2),'.r',testSix(:,1),testSix(:,2),'.b',testEight(:,1),testEight(:,2),'.g')
 legend('Five','Six','Eight')
+
+gmfit.mu()
+gmfit.Sigma()

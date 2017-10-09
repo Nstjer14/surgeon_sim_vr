@@ -53,5 +53,11 @@ for i = 1:nSigma;
         legend(h1,{'1','2','3'});
         hold off
         c = c + 1;
+        
+        gmfit.mu(:,:)
+        gmfit.Sigma()
+        
+        var(X)
     end
 end
+
