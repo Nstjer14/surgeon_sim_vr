@@ -105,10 +105,16 @@ figure('Name','PCA - classifieddata * eigvenvectors','NumberTitle','off')
 plot(classifiedFive(:,1),classifiedFive(:,2),'.r',classifiedSix(:,1),classifiedSix(:,2),'.b',classifiedEight(:,1),classifiedEight(:,2),'.g')
 legend('Five','Six','Eight')
 
+mean(classifiedFive())
+mean(classifiedSix())
+mean(classifiedEight())
+
+cov(classifiedFive())
+cov(classifiedSix())
+cov(classifiedEight())
+
 %The 100% correct data.
 figure('Name','PCA - 100% correct data','NumberTitle','off')
 plot(testFive(:,1),testFive(:,2),'.r',testSix(:,1),testSix(:,2),'.b',testEight(:,1),testEight(:,2),'.g')
 legend('Five','Six','Eight')
 
-gmfit.mu()
-gmfit.Sigma()
