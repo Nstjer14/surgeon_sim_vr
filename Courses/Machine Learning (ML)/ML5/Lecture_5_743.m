@@ -1,3 +1,16 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Group ID : 743
+% Members : Frederik Falk, Oliver Gyldenberg Hjermitslev, Atanas Nikolov,
+% Nicklas Haagh Christensen, Niclas Hjorth Stjernholm
+% Date : 09-10-17
+% Lecture: 5 Clustering
+% Dependencies: Netlab
+% Matlab version: 2017a
+% Functionality: Makes 3 clusters by using Gaussian Mixture Models to
+% define them. These are trained by the training data supplied.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 clear all;
 close all;
 
