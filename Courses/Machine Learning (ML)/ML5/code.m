@@ -39,9 +39,9 @@ for i = 1:nSigma;
         clusterX = cluster(gmfit,X); % Cluster the data
         mahalDist = mahal(gmfit,X0); % Mahalanobis distance 
         subplot(2,2,c);
-        h1 = gscatter(X(:,1),X(:,2),clusterX);
+        h1 = gscatter(X(:,1),X(:,2),clusterX); 
         hold on;
-            for m = 1:k;
+            for m = 1:k; %color clusters 1-3
                 idx = mahalDist(:,m)<=threshold;
                 Color = h1(m).Color*0.75 + -0.5*(h1(m).Color - 1);
                 h2 = plot(X0(idx,1),X0(idx,2),'.','Color',Color,'MarkerSize',1);
