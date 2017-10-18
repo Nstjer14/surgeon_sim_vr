@@ -1,12 +1,28 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Group ID : 743
+% Members : Frederik Falk, Oliver Gyldenberg Hjermitslev, Atanas Nikolov,
+% Nicklas Haagh Christensen, Niclas Hjorth Stjernholm
+% Date : 22-09-17
+% Lecture: 6 Linear discrimination
+% Dependencies: Netlab and LDA function supplied.
+% Matlab version: 2017a
+% Functionality: Chooses three classes from a 10 class database and reduces
+% the dimensions to 2 using the LDA method (Linear Discrimination Analysis).
+% Then performs a 3 class classification of the
+% classes based on the generated 2 dimensional data.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+clear all; close all; clc;
+
 load mnist_all.mat;
 
-%real shit
+% Defining the data, labels and options for the LDA function
 fea = [train5;train6;train8];
 fea = double(fea);
 gnd = [ones(length(train5),1)*5;ones(length(train6),1)*6;ones(length(train8),1)*8];
 options = [];
 options.Fisherface = 1;
 
+% We reduce the dimensions of the training data set
 [eigvector, eigvalue] = LDA(gnd, options, fea);
 Y = fea*eigvector;
 
@@ -72,10 +88,10 @@ end
 
 %Accuracy is calculated
 accuracy = 1-misclass/length(testgnd);
-fprintf('b) PCA - Accuracy = %f\n',accuracy);
+fprintf('b) LDA - Accuracy = %f\n',accuracy);
 
 %The classified data is plotted
-figure('Name','PCA - classifieddata * eigvenvectors','NumberTitle','off')
+figure('Name','LDA - classifieddata * eigvenvectors','NumberTitle','off')
 plot(classifiedFive(:,1),classifiedFive(:,2),'.r',classifiedSix(:,1),classifiedSix(:,2),'.b',classifiedEight(:,1),classifiedEight(:,2),'.g')
 legend('Five','Six','Eight')
 
@@ -88,6 +104,6 @@ cov(classifiedSix())
 cov(classifiedEight())
 
 %The 100% correct data.
-figure('Name','PCA - 100% correct data','NumberTitle','off')
+figure('Name','LDA - 100% correct data','NumberTitle','off')
 plot(testFive(:,1),testFive(:,2),'.r',testSix(:,1),testSix(:,2),'.b',testEight(:,1),testEight(:,2),'.g')
 legend('Five','Six','Eight')
