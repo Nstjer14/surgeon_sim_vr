@@ -85,20 +85,33 @@ To analyse and retrieve information in the matter the main method used is doing 
 The observation team acquired both pictures, notes and some video from the operation. Which describes the tasks and teamwork necessary to perform such an operation. From this different models used in contextual inquiries are made. The models used are a physical model showing the layout of the room, a sequence model to clarify the work needed to be done and an artefact model showing what is used together with the robot.
 
 \section{Results}
-The physical model shows the layout of the entire operation room and where the nurses move. This gives an overview of the operation room and how each nurse act in the room. The figure includes doors and their movement as well as cabinets. The layout is shown in \autoref{fig:layout}.
+The physical model shows the layout of the entire operation room and where the nurses move. This gives an overview of the operation room and how each nurse acts in the room. The figure includes doors and their movement as well as cabinets. The layout is shown in \autoref{fig:layout}.
 
-\begin{figure}
+\begin{figure}[hpbt]
 	\centering
 	\includegraphics[width=\textwidth]{physical}
 	\caption{The phyiscal model showing the layout of the operation room.}
 	\label{fig:layout}
 \end{figure}
 
-The sequence model is made from the the handed out paper "Teoretisk og praktisk undervisning ved robotten som følgende"
+This enables the development and design of the room when creating the simulation.\\
 
-The Artefact models are shown in \autoref{fig:artefacts}.
+The sequence model is made from the the handed out paper "Teoretisk og praktisk undervisning ved robotten som følgende". The sequence model is shown in \autoref{fig:sequence}.
 
-\begin{figure}
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.6\textwidth]{sequencemodel}
+	\caption{Flowchart of the sequence model showing how the operation preparation and debrief is carried out.}
+	\label{fig:sequence}
+\end{figure}
+
+The sequence model describes the actions necessary to both start the operation and to end it. This enables the design of the tasks which should be included in the simulation and their order of appearance to the user.
+The model shown is for an operation without any complications which could lead to de-docking of the robot in an emergency.\\
+
+
+The Artefact models are shown in \autoref{fig:artefacts}. These are created from pictures taken at the observation of the operation. \autoref{fig:drapes} shows the drapes used to cover the arms of the robot sterilising the robot. \autoref{fig:camera} shows the camera also known as the endoscope and calibration equipment.
+
+\begin{figure}[hbpt]
 	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
 		\includegraphics[width=\textwidth]{drapes}
