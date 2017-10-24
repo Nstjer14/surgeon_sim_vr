@@ -23,11 +23,11 @@
 /w44668
 /I "C:\Program Files\Epic Games\UE_4.17\Engine\Source"
 /D_HAS_EXCEPTIONS=0
-/FI"C:\Users\Bruger\Downloads\surgeon_sim_vr-master (1)\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\Proteus\Development\UELinkerFixups\PCH.UELinkerFixups.h"
-/Yu"C:\Users\Bruger\Downloads\surgeon_sim_vr-master (1)\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\Proteus\Development\UELinkerFixups\PCH.UELinkerFixups.h"
-/Fp"C:\Users\Bruger\Downloads\surgeon_sim_vr-master (1)\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\Proteus\Development\UELinkerFixups\PCH.UELinkerFixups.h.pch"
-"C:\Users\Bruger\Downloads\surgeon_sim_vr-master (1)\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\UE4\Development\UELinkerFixups.cpp"
-/Fo"C:\Users\Bruger\Downloads\surgeon_sim_vr-master (1)\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\Proteus\Development\UELinkerFixups\UELinkerFixups.cpp.obj"
+/FI"C:\Users\user\Desktop\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\Proteus\Development\UELinkerFixups\PCH.UELinkerFixups.h"
+/Yu"C:\Users\user\Desktop\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\Proteus\Development\UELinkerFixups\PCH.UELinkerFixups.h"
+/Fp"C:\Users\user\Desktop\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\Proteus\Development\UELinkerFixups\PCH.UELinkerFixups.h.pch"
+"C:\Users\user\Desktop\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\UE4\Development\UELinkerFixups.cpp"
+/Fo"C:\Users\user\Desktop\surgeon_sim_vr-master\UEProject\Intermediate\Build\Win64\Proteus\Development\UELinkerFixups\UELinkerFixups.cpp.obj"
 /TP
 /GR-
 /W4
