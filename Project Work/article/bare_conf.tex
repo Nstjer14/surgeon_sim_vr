@@ -406,15 +406,26 @@ The abstract goes here.
 %source everything
 %motivation, why this project is important
 
-Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future [cite taylor medical 2008] In some areas, it has even become an essential technology [cite sivaraman robotics 2015]. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates compared to conventional surgery [cite razmaria does 2014, punnen how 2013, sung oncologic 2016], errors and complications still occur. Alemzadeh et al found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistake. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors (see Figure \ref{fig:Alam}) [cite alemzadeh adverse 2016].
+%I think this should be enough background
+Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future [cite taylor medical 2008] In some areas, it has even become an essential technology [cite sivaraman robotics 2015]. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery [cite razmaria does 2014, punnen how 2013, sung oncologic 2016, raza long-term 2015], errors and complications still occur. Alemzadeh et al found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistake. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors (see Figure \ref{fig:Alam}) [cite alemzadeh adverse 2016].
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
-\includegraphics[scale=1]{Figures/AlamzadehInjury.PNG}
+\includegraphics[width=1.0\textwidth]{Figures/AlamzadehInjury.PNG}
 \caption{Reasons for injury during RAMIS. Source: cite alamzadeh}
 \label{fig:Alam}
 \end{figure}
 
+%small one-sentence conclusion on this? does it make sense as is?
+According to Alemzadeh et al, one key area of RAMIS that may be improved is the "human-machine interfaces and surgical simulators that train surgical teams for handling technical problems". Other researchers suggest a variety of methods to reduce injury numbers, such as dry lab training, simulated emergency handling in virtual reality (VR), and even a complete remodeling of operating theaters [cite liberman training 2011, huser simulated 2014, ahmad ambulatory 2016, abelson virtual 2015]. 
+
+%am i putting words in her mouth?
+During an interview with and observation of Jane Petersson, First Nurse Assistant and Nurse Specialist in Robotic Surgery at Aalborg University Hospital and MinimalInvasiv UdviklingsCenter (Minimally Invasive Education Centre, MIUC), she stated that the most important aspects of RAMIS are routine and training, especially as part of a team. This claim is substantiated by several studies [cite moorthy qualitative 2004, chandra comparison 2010], showing clear improvements for experienced surgeons, but also a significant learning curve.
+
+%points to make:
+%surgery and training = expensive
+%more practice = better
+We, together with Jane Petersson, believe this can be extended to team training in VR as shown by Abelson et al in conventional surgery [cite abelson again] and Huser et al simulating full surgery teams doing emergency fibrillation. VR training has the benefits of being cost-effective compared to regular RAMIS training (~10,000 DKK per person), at the cost of reduced accuracy, as well as enabling concurrent multi-user functionality in different locations. This would allow surgeons and nurses to train certain scenarios at their work or at home instead of traveling to certified institutions. 
 
 \subsection{Subsection Heading Here}
 Subsection text here.
@@ -520,6 +531,10 @@ Subsubsection text here.
 
 \section{Methods}
 How did we solve the problem
+
+We want to follow Jane's training and implement a 3-4 person scenario where they have to go to open surgery.
+%jane said they know most of the procedure, so train specific vital scenarios
+%emergency is good to train in vr since it's not dangerous there
 
 \section{Results}
 What did we find out
