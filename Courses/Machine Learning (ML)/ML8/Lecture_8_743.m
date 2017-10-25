@@ -1,4 +1,15 @@
-clear;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Group ID : 743
+% Members : Frederik Falk, Oliver Gyldenberg Hjermitslev, Atanas Nikolov,
+% Nicklas Haagh Christensen, Niclas Hjorth Stjernholm
+% Date : 22-09-17
+% Lecture: 6 Linear discrimination
+% Dependencies: Netlab.
+% Matlab version: 2017a
+% Functionality: Makes a network from the training data and propegates the test data through the neural network.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+clear all; close all;
 load mnist_all;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%-------TRAINING THE NEURAL NETWORK------%%%%%%%%%%%%%%%%%
@@ -47,9 +58,10 @@ nine = Y(sofar:length(Y),:);
 
 %Linear Net Function Below:
 net = mlp(9,13,10,'linear'); 
-%9: Dimension Vectors
-%13: Hidden layers
-%10: Possible output from 0 to 9
+% 9: Dimension Vectors
+% 13: Hidden layers. This amount of hidden layers are chosen as seen fit to
+% avoid too large an error but also overfitting.
+% 10: Possible output from 0 to 9
 
 T = zeros(length(Y),10);
 
@@ -57,8 +69,9 @@ for ii=1:length(Y)
  T(ii,:) = [0,1,2,3,4,5,6,7,8,9];
 end
 
-its = 25; %Number of iterations.
-class = mlptrain(net,Y,T,its); %Training the classifier with the net, from the training data, to the target data, using its number of iterations
+its = 25; % Number of iterations.
+class = mlptrain(net,Y,T,its); % Training the classifier with the net, from the training data, 
+                               % to the target data, using its number of iterations
 
 
 
@@ -73,15 +86,15 @@ res = mlpfwd(class,testY); % Results by propogate the data through the trained n
 plot(res,'.');
 legend('Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine');
 
-%Calculating the accuracy below:
-fails =0;
+% Calculating the accuracy below:
+fails = 0;
 
 for ii=1:length(res)
  fails = fails + sum((round(res(ii,:))-[0,1,2,3,4,5,6,7,8,9])>0);
  %As predictions and data type are two different data types (float and
  %int), we check the nearest integer instead of using floats. 
 end
-%Calculate the accuracy (there are 10 numbers per result, so multiply by
+%Calculate the accuracy (there are 10 numbers per result, so we multiply by
 %10)
 acc = 1-(fails/(length(res)*10));
 
