@@ -25,6 +25,7 @@ training_labels = double([zeros(length(train0(:,1)),1);...
 
 training_data = training_data./255;
 
+%cost = 1 (parameter C), epsilon tolerance criterion0.6, cache size 500 MB
 svmstruct = svmtrain(training_labels,training_data,'-c 1 -e 0.6 -m 500');
 
 test_data = double([test0; test1; test2]);
