@@ -2,8 +2,8 @@
 % Group ID : 743
 % Members : Frederik Falk, Oliver Gyldenberg Hjermitslev, Atanas Nikolov,
 % Nicklas Haagh Christensen, Niclas Hjorth Stjernholm
-% Date : 22-09-17
-% Lecture: 6 Linear discrimination
+% Date : 25-09-17
+% Lecture: 8 Neural Networking
 % Dependencies: Netlab.
 % Matlab version: 2017a
 % Functionality: Makes a network from the training data and propegates the test data through the neural network.
@@ -57,7 +57,7 @@ sofar = sofar + length(eight);
 nine = Y(sofar:length(Y),:);
 
 %Linear Net Function Below:
-net = mlp(9,13,10,'linear'); 
+net = mlp(9,10,10,'linear'); 
 % 9: Dimension Vectors
 % 13: Hidden layers. This amount of hidden layers are chosen as seen fit to
 % avoid too large an error but also overfitting.
