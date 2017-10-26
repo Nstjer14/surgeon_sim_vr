@@ -1,4 +1,3 @@
-
 %% bare_conf.tex
 %% V1.4b
 %% 2015/08/26
@@ -92,7 +91,7 @@
 
 % *** CITATION PACKAGES ***
 %
-%\usepackage{cite}
+\usepackage{cite}
 % cite.sty was written by Donald Arseneau
 % V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
 % \cite{} output to follow that of the IEEE. Loading the cite package will
@@ -116,7 +115,7 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -407,7 +406,7 @@ The abstract goes here.
 %motivation, why this project is important
 
 %I think this should be enough background
-Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future [cite taylor medical 2008] In some areas, it has even become an essential technology [cite sivaraman robotics 2015]. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery [cite razmaria does 2014, punnen how 2013, sung oncologic 2016, raza long-term 2015], errors and complications still occur. Alemzadeh et al found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistake. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors (see Figure \ref{fig:Alam}) [cite alemzadeh adverse 2016].
+Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future [cite taylor medical 2008] In some areas, it has even become an essential technology [cite sivaraman robotics 2015]. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery [cite razmaria does 2014, punnen how 2013, sung oncologic 2016, raza long-term 2015], errors still occur. Alemzadeh et al found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistake. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors (see Figure \ref{fig:Alam}) [cite alemzadeh adverse 2016].
 
 \begin{figure}[h]
 \centering
@@ -425,7 +424,7 @@ During an interview with and observation of Jane Petersson, First Nurse Assistan
 %points to make:
 %surgery and training = expensive
 %more practice = better
-We, together with Jane Petersson, believe this can be extended to team training in VR as shown by Abelson et al in conventional surgery [cite abelson again] and Huser et al simulating full surgery teams doing emergency fibrillation. VR training has the benefits of being cost-effective compared to regular RAMIS training (~10,000 DKK per person), at the cost of reduced accuracy, as well as enabling concurrent multi-user functionality in different locations. This would allow surgeons and nurses to train certain scenarios at their work or at home instead of traveling to certified institutions. 
+We, together with Jane Petersson, believe this can be extended to team training in VR as shown by Abelson et al in conventional surgery [cite abelson again] and Huser et al simulating full surgery teams doing emergency fibrillation. VR training has the benefits of being cost-effective compared to regular RAMIS training (~10,000 DKK per person), at the cost of reduced accuracy, as well as enabling concurrent multi-user functionality in different locations. This would allow surgeons and nurses to train certain scenarios at their work or at home instead of travelling to certified institutions. 
 
 \subsection{Subsection Heading Here}
 Subsection text here.
@@ -532,7 +531,7 @@ Subsubsection text here.
 \section{Methods}
 How did we solve the problem
 
-We want to follow Jane's training and implement a 3-4 person scenario where they have to go to open surgery.
+%We want to follow Jane's training and implement a 3-4 person scenario where they have to go to open surgery.
 %jane said they know most of the procedure, so train specific vital scenarios
 %emergency is good to train in vr since it's not dangerous there
 
