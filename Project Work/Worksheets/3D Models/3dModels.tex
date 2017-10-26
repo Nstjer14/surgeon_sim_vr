@@ -5,6 +5,8 @@
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \usepackage{graphicx}
+\usepackage{float}
+
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
 \usepackage{sectsty} % Allows customizing section commands
@@ -45,12 +47,25 @@
 \begin{document}
 
 \maketitle % Print the title
+\section{Prioritizing the Implementation}
+
+A Need / Want / Nice to have list was created to scope the project and to prioritize essential features for the evaluation. The needs in this list constitutes to the minimum implementation requirements and contains the most important features and functionalities to test the system qualitatively and quantitatively. 
+
+\textbf{Need}
+\textbf{Want}
+\textbf{Nice to have}
+ 
+
 \section{Tools Used}
+Various programs were used to recreate the operating theatre in 3D. The scene layout was created in Unreal Engine 4 from the physical model described in Section \ref{•}.Unreal Engine 4 was chosen over Unity as implementation of multi-player in virtual reality proved easier. 
+The 3D models in the scene was created using Audtodesk Maya and 3DS Max. These programs support box modelling which was used to shape all the objects. 
+Materials were added later when each of the objects were imported to Unreal Engine 4. They were kept simple to improve performance and visual simplicity.
 
-A combination of programs were used
-Box Modelling of the models as the programs support it
-
-Textures was applied in unreal engine
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{tools.png}
+\caption{Logos of the tools used}
+\end{figure}
 
 
 %------------------------------------------------
@@ -59,11 +74,14 @@ Textures was applied in unreal engine
 
 How the da Vinci robot was made and how the IK handles was implemented
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{plz.png}
 \caption{The da Vinci Robot made in 3Ds Max}
 \end{figure}
+
+\section{Operating Theatre in Virtual Reality}
+Insert screenshots and write about the final room in the scene. 
 
 \section{Problems Encountered}
 
