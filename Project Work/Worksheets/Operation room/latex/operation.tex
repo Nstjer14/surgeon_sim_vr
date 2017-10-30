@@ -29,7 +29,7 @@
 
 \usepackage{graphicx}
 \usepackage{subcaption}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage[utf8]{inputenc} 
 
 \usepackage[toc,page]{appendix} 
@@ -111,23 +111,42 @@ The sequence model describes the actions necessary to both start the operation a
 The model shown is for an operation without any complications, which could lead to de-docking of the robot in an emergency.\\
 
 
-The Artefact models are shown in \autoref{fig:artefacts}. These are created from pictures taken during the observation. \autoref{fig:drapes} shows the plastic drapes used to cover the arms of the robot sterilising it. \autoref{fig:camera} shows the endoscopic camera during calibration.
+The Artefact models are shown in figures \ref{fig:drapes}, \ref{fig:camera}, \ref{fig:cam_close}, \ref{fig:port}, and \ref{fig:tools}. These are created from pictures taken during the observation. \autoref{fig:drapes} shows the plastic drapes used to cover the arms of the robot sterilising it. \autoref{fig:camera} shows the endoscopic camera during calibration. \autoref{fig:cam_close} shows the endoscopic camera up close. \autoref{fig:port} shows one of the ports used to insert the tools into the patient. \autoref{fig:tools} shows the tools used with the robot.
+
 
 \begin{figure}[hbpt]
 	\centering
-	\begin{subfigure}[b]{0.6\textwidth}
-		\includegraphics[width=\textwidth]{drapes}
-		\caption{Figure showing the drapes used to cover the arms of the robot, sterilising them}
-		\label{fig:drapes}
-	\end{subfigure}
+	\includegraphics[width=0.6\textwidth]{drapes.pdf}
+	\caption{Figure showing the drapes used to cover the arms of the robot, sterilising them}
+	\label{fig:drapes}
+\end{figure}
 
-	\begin{subfigure}[b]{0.6\textwidth}
-		\includegraphics[width=\textwidth]{camera}
-		\caption{Figure showing the camera used with the robot and a calibration tool}
-		\label{fig:camera}
-	\end{subfigure}
-	\caption{The figures show the artefacts used with the robot}
-	\label{fig:artefacts}
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.6\textwidth]{camera.pdf}
+	\caption{Figure showing the camera used with the robot and a calibration tool}
+	\label{fig:camera}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.6\textwidth]{camera_close}
+	\caption{Figure showing the endoscopic camera up close}
+	\label{fig:cam_close}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.6\textwidth]{port}
+	\caption{Figure showing one of the ports used to insert the tools in the patient}
+	\label{fig:port}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.6\textwidth]{tools}
+	\caption{Figure showing the tools used with the robot}
+	\label{fig:tools}
 \end{figure}
 
 \section{Conclusion}
