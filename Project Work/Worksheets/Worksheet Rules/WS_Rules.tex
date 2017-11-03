@@ -26,11 +26,16 @@
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc} 
+
+\usepackage[toc,page]{appendix} 
 
 \usepackage{sectsty} % Allows customizing section commands
 \allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
-
-\usepackage{graphicx}
 
 \usepackage{fancyhdr} % Custom headers and footers
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
@@ -47,6 +52,7 @@
 \numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -72,7 +78,7 @@
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
 
-\section{Designing rules for VR environment}
+\section{Designing Rules for a VR Environment}
 
 %why have we done this
 
@@ -82,9 +88,9 @@ E = M * C^2
 \end{split}					
 \end{align}
 
-To ensure realism and to estimate functionality of the virtual reality simulation a set of rules for the system should be drawn. The core rules can be separated into three primary groups; the system, the users, and the virtual equipment. However, these rules are set preliminary to implementation but is based upon the observations made in the training room as well as interviews with Jane Petersson. The mindmap of these rules can be seen below:
+To ensure realism and to estimate functionality of the virtual reality simulation a set of rules for the system should be drawn. The core rules can be separated into three primary groups; the system, the users, and the virtual equipment. However, these rules are set prior to implementation but are based on observations made in the training room as well as interviews with Jane Petersson. The mindmap of these rules is shown in Figure  \autoref{fig:Rules}.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.75\textwidth]{BSR}
 \caption{Mindmap}
@@ -92,10 +98,10 @@ To ensure realism and to estimate functionality of the virtual reality simulatio
 \end{figure}
 
 \subsection{The System}
-The rules set for the system can be considered as a passive. These rules primary exists to accurately recreate the environment and ensure the proper functionality of the surgical equipment. This rules also track for any errors that might be done by the users, such as wrong positioning of the robot arms or bad tool placement.
+The rules set for the system can be considered passive. These rules primarily exist to accurately recreate the environment and ensure the proper functionality of the surgical equipment. These rules also track any errors that might be done by the users, such as poor positioning of the robot arms or incorrect tool placement.
 
 \subsection{The User}
-The users in the scene should be designated a specific role which entails different tasks, but they should not be limited by that role. Completing a task as a group, rather than multiple individuals should be the primary focus for the users. This means that communication is very important and key to the success of the entire simulation.
+The users in the scene should be designated a specific role which entails different tasks, but they should not be limited by that role. Completing a task as a group, rather than multiple individuals should be the primary focus for the users, since communication is vital to the success of the simulation.
 
 \subsection{The Equipment}
 The equipment's rules should primarily focus on their specific use and how they should be handled by the users. Furthermore it should also include how the equipment should respond to certain user actions or other objects within the scene.
