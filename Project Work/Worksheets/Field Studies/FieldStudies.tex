@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Aalborg University, Electronic Systems} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Field Studies \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Purpose}
+The purpose of the interview was to understand how nurses and surgeons train to operate a da Vinci robot and perform RAMIS. 
+
+\section{Method}
+We observed a training session at MIUC followed by a semi-structured interview with Jane Petersson and Johan Poulsen to get an understanding of RAMIS and how surgeons practise. Furthermore, we performed a semi-structured interview with first assistant nurse Jane Petersson who is in charge of training nurses to handle the robot and how to act in a team environment.
+\section{Results}
+The results are split into two sections; one for the surgeon training at MIUC and the other for the interview with Jane Petersson regarding team training.
+
+\subsection{Surgeon Training at MIUC}
+The training sessions at MIUC varies depending on the skill level of the participants. In cases with skilled participants, the students takes on the role as instructors to help guide during the training session. This is beneficial as the surgeon often will be in charge of during surgery.
+
+During the interview, Jane Petersson explained that during team training a surgeon will operate the robot while making calls for the nurses in training to do. The individual tasks for the nurses depends on their current role and what they are studying to become. For instance, a first assistant nurse is the one who assists the surgeon inside of the patient. In general, the training focus highly on getting familiar with the robot and how it operates during surgery. One particular task is important for the nurses to learn - how to dock the robot. As stated by both Jane Petersson and Johan Poulsen, ensuring that the robot is rightfully docked is key to enable the surgeon full movability of the robot. Johan Poulsen also expressed the importance of sterility of staff and tools, however in a VR simulated environment errors can be made without it causing complications which is beneficial for the learning process.
+
+\subsection{Interview with Jane Petersson}
+One of the most important things during surgery and training is the emergency handling, however this requires extensive knowledge of the robot and tools. Another very important task is the placement of the robot arms because collisions during surgery can be very dangerous. Sometimes the surgeons adjust the arms manually.
+
+In general, the training is for hands on experience with the robot and individual instruments, in preparation for a real surgery.
+
+The team training consists of:
+\begin{itemize}
+  \item First assistant nurse - Sterile, assists the surgeon inside the patient's body.
+  \item Scrub nurse - Sterile, prepare unpacked tools for the first assistant nurse.
+  \item Circulating nurse - Not sterile, unpacks tools, and can go outside the sterile area.
+\end{itemize}  
+
+During training, on the first day Jane Petersson starts by talking and showing how tasks are done, students observe. On the second day, students are expected to do most of the tasks themselves. At the end of the second day, Jane Petersson sabotages some of the equipment and the students have to find and fix it. Any mistakes done by the students are used for learning purpose. At the beginning of the training, Jane Petersson makes most of the decisions, however later the surgeon is expected to take the lead.
+
+\section{Conclusion}
+The observations and interviews have given an insight as to how both the surgeons and the nurses train and work with the da Vinci Surgical System. Furthermore, critical procedures have been explained by Jane Petersson. These procedures are a must know as failures within these could prove critical or even fatal.
+
+\end{document}
