@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Aalborg University, Electronic Systems} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Implementing Outlines in Unreal Engine 4 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Purpose}
+The purpose was to create an outline that indicates to users whether the object they are nearing is interactable. The important objects in the scenario are the tools, the robot arms, and other items such as the scrubs. Somehow indicating that items can be interacted with is important in VR and in many other graphical environments such as games.
+
+\section{Method}
+Two methods were implemented that could create these outlines; inverted normal meshes, and post processing. Inverted normal meshes are applied over the regular mesh and upscaled slightly. They are easy on GPUs compared to many post processing effects, but lack in customizability and accessibility during runtime. They also get increasingly messy when applied to detailed meshes. Post processing is usually computationally expensive compared to the previous method since they require at least an extra depth render, but they perform better in edge cases (such as overlapping), and are very customizable even during runtime. This was implemented using Unreal Engine's post processing stack, a depth render on important objects, and a global custom material.
+
+\section{Results}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\textwidth]{comparison.png}
+\caption{Comparison between methods. Left: Post processing, line width 3. Right: Inverted normals mesh, upscaled 1.1}
+\label{fig:comparison}
+\end{figure}
+
+Figure \ref{fig:comparison} shows the two methods compared to each other. The post processing outline is a part of the mesh, whereas the inverted normals mesh extends over the regular mesh. The right side also shows some differences in line width, as well as some irregular lines around the eyes. On the left side, the lines being part of the monkey head mesh is also very obvious, as some of the detail is lost. 
+
+\section{Conclusion}
+
+
+
+\end{document}
