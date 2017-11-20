@@ -367,19 +367,44 @@ We, together with Jane Petersson, believe this can be extended to team training 
 % footnotes above bottom floats. This can be corrected via the
 % \fnbelowfloat command of the stfloats package.
 
-<<<<<<< Updated upstream
-\section{Method}
 
-=======
+
+\begin{figure}[H]
+\includegraphics[width=0.48\textwidth]{Figures/fieldstudyresults.png}
+\caption{Key objects during robot surgery. The robot arms of the da Vinci robot, ports used to insert the laparoscopic tools into the patient}
+\label{Fig:fieldresult}
+\end{figure}
+
 \section{Methods}
 This section provides information about the methods used in designing a system capable of simulating team training for nurses in virtual reality and how it was tested. 
+
 \subsection{Design}
+System design and minimum implementation criteria was set after a series of observations and interviews with Jane Petersson and Johan Poulsen was conducted. Active observations of robot surgery, surgeon training and team training for nurse assistants were needed to assess the implementation requirements whereas semi-structured interviews with experts provided inspiration and informed the design of the system. 
+Figure \ref{Fig:fieldresult} shows the most important objects during robot assisted minimally invasive surgery. The top image shows a nurse preparing the robot arms by covering them in drapes to sterilize the equipment. An important aspect of this preparation is to place the arms correctly to avoid collisions during surgery. The middle image shows the ports that are inserted in the patient. The placement and rotation of these is of importance and is therefore also an object of interest. The bottom image shows the operating tools that are latched on to the robot arms and through the ports on the patient. These tools perform a wide variety of tasks depending on the type of tool such as cutting and grabbing tissue.  
+The interviews with Jane Petersson focused primarily on the important aspects of team training for surgical nurses. These were communication between nurses, understanding your role in the operating room and the introduction to the da Vinci robot. During training, the instructor will spend time with the trainees getting to know the robot and show important steps such as placement of the arms, insertion of ports and instruments, controls of the robot, and teach the different error messages. The nurses will then have to use their knowledge and communicate with each other when they are operating on a live pig later. This way they gain hand-on experience with the robot and its functionalities according to Jane Petersson. She also mentioned that it is important that the instructor or someone with RAMIS experience is nearby as sporadic questions always arise. The communication is therefore not only nurse-to-nurse, but also a largely nurse-instructor.
+During RAMIS there are usually three nurses present, one surgeon, and one anaesthetic nurse or doctor. The surgeon will sit at the surgeon console, controlling the arms of the robot while looking into a stereoscopic display. The three nurses all have different responsibilities. These are the sterile nurse and the surgeon assistant (sometimes first nurse assistant) who assist the the surgery by providing the right tools, monitoring the patient, and are the surgeon's "eyes outside of the patient". The third nurse, called the circulating nurse or \textit{floor nurse} is not sterile and can therefore go in and out of the operating room as needed and perform tasks that would otherwise unsterilize (this is a word Oliver) the other nurses. An overview of the OR, together with the roles of each member of staff is visualized in Figure \ref{fig:overview} 
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.48\textwidth]{Figures/overview.png}
+ \caption{An overview of the operating room from the field observations}
+ \label{fig:overview}
+ \end{figure}
+ 
+ The training room during team training is much smaller than the OR and space can be a problem in this context. Another benefit of virtualizing team training would therefore be more space.
+
+Observations of the team training emphasized the importance of precision. When dealing with surgery every variable is situation dependent. This means there is no universal way of e.g. placement and orientation of the ports and tools, tilt of operating table, or even manual control of the laporascopic tools. These procedures require concentration and are constantly evaluated and corrected by the nurse performing them. Some of the primary feedback they get is from the screens placed in the room. These screens show the camera inside the patient and they use this to optimize their precision when working. 
+Observations also led to the conclusion that a lot of questions arise during the training. These questions are often pointed at the instructor. The instructor then gives an in-depth answer while often also visualizing it using the tools and robot. These questions come sporadically and often unpredictably and it is therefore important that an instructor is nearby to make sure the procedure continues. Team training also prepare the nurses for emergencies, especially emergency undocking of the robot. When an emergency undocking is issued, the two nurses at the robot has to remove the arms and the ports on the patient and prepare for an open surgery, while the circulating nurse assists by calling for assistance and preparing the surgeon for open surgery. During this procedure precision and accuracy is not important, instead the time taken to perform the procedure becomes essential. 
+
+Based on our field work .... 
+We used Unreal engine to.... 
+
 Interviews, observations, artefact models and all field work leading to the design of the robot, room and tasks implemented in the current system. Remember to argue for the lack of precision in the simulator and why we implemented emergency undocking since everything else in team training is not viable. 
 Then instead we focus on the usability and make a shader that outline objects of interest, enable communication between participants, multiplayer, and in general make an exploratory project instead. We aim to answer if VR and Nurse team training is viable and what future projects should focus on when implementing in this context in VR. OUr experience is that there's a lot of talking and that's why it is necessary to have communication. There's a lot of showing and situation dependent illustrations that is not viable within our time constraints. 
 Remember to mention that we designed it all in unreal engine 4 and with the htc vive headset. 
 An idea in unrealæ was to implement IK hanldes and make the robot interactable but Unreal does not allow for this since the FABRIK affector position cannot be interacted with in real time. 
 \subsection{Evaluation}
->>>>>>> Stashed changes
+
 Two types of tests were performed, a usability test and an expert review with Jane Petersson and Johan Poulsen, head surgeon at AUH. Both tests were part of a system review. The system allowed multiple concurrent users to act in an operation environment with the intent of ultimately allowing RAMIS surgeons and nurses to train specific scenarios in VR with emphasis on communication and routine. The scenarios implemented in the test system are described in this section. The test procedure is listed below:
 
 \begin{itemize}
