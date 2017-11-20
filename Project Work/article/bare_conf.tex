@@ -186,7 +186,7 @@
 % for over three affiliations, or if they all won't fit within the width
 % of the page, use this alternative format:
 % 
-\author{\IEEEauthorblockN{Nicklas Hagh Christensen$^{1}$,
+\author{\IEEEauthorblockN{Nicklas Haagh Christensen$^{1}$,
 Frederik Falk$^{2}$,
 Oliver GyldenBerg Hjermitslev$^{3}$, \\
 Atanas Atanasov Nikolov$^{4}$ and
@@ -370,7 +370,7 @@ We, together with Jane Petersson, believe this can be extended to team training 
 
 
 \begin{figure}[H]
-\includegraphics[width=0.48\textwidth]{Figures/fieldstudyresults.png}
+\includegraphics[width=0.48\textwidth]{Figures/fieldstudyresults.pdf}
 \caption{Key objects during robot surgery. The robot arms of the da Vinci robot, ports used to insert the laparoscopic tools into the patient}
 \label{Fig:fieldresult}
 \end{figure}
@@ -380,13 +380,13 @@ This section provides information about the methods used in designing a system c
 
 \subsection{Design}
 System design and minimum implementation criteria was set after a series of observations and interviews with Jane Petersson and Johan Poulsen was conducted. Active observations of robot surgery, surgeon training and team training for nurse assistants were needed to assess the implementation requirements whereas semi-structured interviews with experts provided inspiration and informed the design of the system. 
-Figure \ref{Fig:fieldresult} shows the most important objects during robot assisted minimally invasive surgery. The top image shows a nurse preparing the robot arms by covering them in drapes to sterilize the equipment. An important aspect of this preparation is to place the arms correctly to avoid collisions during surgery. The middle image shows the ports that are inserted in the patient. The placement and rotation of these is of importance and is therefore also an object of interest. The bottom image shows the operating tools that are latched on to the robot arms and through the ports on the patient. These tools perform a wide variety of tasks depending on the type of tool such as cutting and grabbing tissue.  
+\autoref{Fig:fieldresult} shows the most important objects during robot assisted minimally invasive surgery. The top image shows a nurse preparing the robot arms by covering them in drapes to sterilize the equipment. An important aspect of this preparation is to place the arms correctly to avoid collisions during surgery. The middle image shows the ports that are inserted in the patient. The placement and rotation of these is of importance and is therefore also an object of interest. The bottom image shows the operating tools that are latched on to the robot arms and through the ports on the patient. These tools perform a wide variety of tasks depending on the type of tool such as cutting and grabbing tissue.  
 The interviews with Jane Petersson focused primarily on the important aspects of team training for surgical nurses. These were communication between nurses, understanding your role in the operating room and the introduction to the da Vinci robot. During training, the instructor will spend time with the trainees getting to know the robot and show important steps such as placement of the arms, insertion of ports and instruments, controls of the robot, and teach the different error messages. The nurses will then have to use their knowledge and communicate with each other when they are operating on a live pig later. This way they gain hand-on experience with the robot and its functionalities according to Jane Petersson. She also mentioned that it is important that the instructor or someone with RAMIS experience is nearby as sporadic questions always arise. The communication is therefore not only nurse-to-nurse, but also a largely nurse-instructor.
-During RAMIS there are usually three nurses present, one surgeon, and one anaesthetic nurse or doctor. The surgeon will sit at the surgeon console, controlling the arms of the robot while looking into a stereoscopic display. The three nurses all have different responsibilities. These are the sterile nurse and the surgeon assistant (sometimes first nurse assistant) who assist the the surgery by providing the right tools, monitoring the patient, and are the surgeon's "eyes outside of the patient". The third nurse, called the circulating nurse or \textit{floor nurse} is not sterile and can therefore go in and out of the operating room as needed and perform tasks that would otherwise unsterilize (this is a word Oliver) the other nurses. An overview of the OR, together with the roles of each member of staff is visualized in Figure \ref{fig:overview} 
+During RAMIS there are usually three nurses present, one surgeon, and one anaesthetic nurse or doctor. The surgeon will sit at the surgeon console, controlling the arms of the robot while looking into a stereoscopic display. The three nurses all have different responsibilities. These are the sterile nurse and the surgeon assistant (sometimes first nurse assistant) who assist the the surgery by providing the right tools, monitoring the patient, and are the surgeon's "eyes outside of the patient". The third nurse, called the circulating nurse or \textit{floor nurse} is not sterile and can therefore go in and out of the operating room as needed and perform tasks that would otherwise unsterilize (this is a word Oliver) the other nurses. An overview of the OR, together with the roles of each member of staff is visualized in \autoref{fig:overview} 
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.48\textwidth]{Figures/overview.png}
+ \includegraphics[width=0.48\textwidth]{Figures/overview.pdf}
  \caption{An overview of the operating room from the field observations}
  \label{fig:overview}
  \end{figure}
@@ -415,19 +415,12 @@ Two types of tests were performed, a usability test and an expert review with Ja
 \item A short exit interview is held
 \end{itemize}
 
-The VR environment allowed participants to interact with a virtual robot modelled after the da Vinci Si, see Figure XX. They were able to move the arms and fit it with tools. Additionally, they were able to interact with items such as scrubs found in the room, which was modelled after the AUH robotic operating room, as shown in \autoref{fig:op_room_over}.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.3\textwidth]{Figures/physical.pdf} 
-	\caption{Overview of the AUH robotic operation room.}
-	\label{fig:op_room_over}
-\end{figure}
+The VR environment allowed participants to interact with a virtual robot modelled after the da Vinci Si, see Figure XX. They were able to move the arms and fit it with tools. Additionally, they were able to interact with items such as scrubs found in the room, which was modelled after the AUH robotic operating room, as shown in \autoref{fig:overview}.
 
 
 The scenario simulated was chosen based on interviews with Jane Petersson. It tasked participants with calibrating the robot arms by moving the tools to the "patient's" body. Afterwards, they were tasked with performing an emergency undocking together, going to open surgery. An overview of roles and tasks during emergency undocking is shown in Figure XX. This scenario was chosen since it enables training vital procedures that can be relatively accurately represented in VR. According to Jane Petersson, these are the most important tasks to train since they are what trainees undergoing team training at MIUC usually struggle the most with. Additionally, it would allow trainees to practice emergency procedures in a safe environment. Each participant was randomly assigned a role matching one shown in Figure XX, and informed of their tasks as the scenario progressed through a graphical user interface (GUI).
 
-The participants used three HTC Vive head mounted displays (HMDs) connected to a server hosted on computer A. Computer C was located in a separate room from computer A and B. The specifications of these computers are shown in Table \ref{TAB:specs}. 
+The participants used three HTC Vive head mounted displays (HMDs) connected to a server hosted on computer A. Computer C was located in a separate room from computer A and B. The specifications of these computers are shown in \autoref{tab:specs}. 
 
 \begin{table}[H]
 \centering
@@ -441,7 +434,7 @@ The participants used three HTC Vive head mounted displays (HMDs) connected to a
 \textbf{Motherboard} & x                   & x                   & x                   \\ \toprule
 \end{tabularx}
 \caption{Specifications of the computers used}
-\label{TAB:specs}
+\label{tab:specs}
 \end{table}
 
 Prior to the test, participants were informed of the two actions they could perform, namely grabbing (using the HTC Vive controller's trigger) and teleporting (using the touchpad on the controller). Teleporting is important in VR since there is limited space to move around in the real world, and thus participants were also cautioned not to move outside the bounds shown in the world by poles. They were also informed about the possibility of VR sickness [cite XX] and that should it happen, they were to inform the observers and disengage from the system.
