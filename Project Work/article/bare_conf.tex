@@ -140,12 +140,12 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{tabularx}
 \usepackage[table]{xcolor}
+\usepackage[hidelinks]{hyperref}
 
 \definecolor{lightGrey}{RGB}{240,240,240}
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
-
 
 \begin{document}
 %
@@ -237,7 +237,7 @@ The abstract goes here.
 %motivation, why this project is important
 
 %I think this should be enough background
-Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future [cite taylor medical 2008]. In some areas, it has even become an essential technology [cite sivaraman robotics 2015]. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery, errors still occur [cite razmaria does 2014, punnen how 2013, sung oncologic 2016, raza long-term 2015]. Alemzadeh et al found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistakes. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors (see Figure \ref{fig:Alam}) [cite alemzadeh adverse 2016].
+Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future [cite taylor medical 2008]. In some areas, it has even become an essential technology [cite sivaraman robotics 2015]. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery, errors still occur [cite razmaria does 2014, punnen how 2013, sung oncologic 2016, raza long-term 2015]. Alemzadeh et al found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistakes. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors (see \autoref{tab:Alam}) [cite alemzadeh adverse 2016].
 
 
 \begin{table}[H]
@@ -256,7 +256,7 @@ Surgeon felt shocking at the surgeon-side console & 2 (0.5\%)                   
 N/A                                               & 77 (18.8\%)                     \\ \toprule
 \end{tabular}
 \caption{The most common sources of injury[cite alemzadeh adverse 2016]}
-\label{fig:Alam}
+\label{tab:Alam}
 \end{table}
 
 %small one-sentence conclusion on this? does it make sense as is?
@@ -412,10 +412,18 @@ Two types of tests were performed, a usability test and an expert review with Ja
 \item The usability participants are split up in different rooms
 \item The participants perform the required tasks together
 \item Usability test participants fill out questionnaires
-\item A short exit interview was held
+\item A short exit interview is held
 \end{itemize}
 
-The VR environment allowed participants to interact with a virtual robot modelled after the da Vinci Si, see Figure XX. They were able to move the arms and fit it with tools. Additionally, they were able to interact with items such as scrubs found in the room, which was modelled after the AUH robotic operating room, as shown in Figure XX. 
+The VR environment allowed participants to interact with a virtual robot modelled after the da Vinci Si, see Figure XX. They were able to move the arms and fit it with tools. Additionally, they were able to interact with items such as scrubs found in the room, which was modelled after the AUH robotic operating room, as shown in \autoref{fig:op_room_over}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.3\textwidth]{Figures/physical.pdf} 
+	\caption{Overview of the AUH robotic operation room.}
+	\label{fig:op_room_over}
+\end{figure}
+
 
 The scenario simulated was chosen based on interviews with Jane Petersson. It tasked participants with calibrating the robot arms by moving the tools to the "patient's" body. Afterwards, they were tasked with performing an emergency undocking together, going to open surgery. An overview of roles and tasks during emergency undocking is shown in Figure XX. This scenario was chosen since it enables training vital procedures that can be relatively accurately represented in VR. According to Jane Petersson, these are the most important tasks to train since they are what trainees undergoing team training at MIUC usually struggle the most with. Additionally, it would allow trainees to practice emergency procedures in a safe environment. Each participant was randomly assigned a role matching one shown in Figure XX, and informed of their tasks as the scenario progressed through a graphical user interface (GUI).
 
