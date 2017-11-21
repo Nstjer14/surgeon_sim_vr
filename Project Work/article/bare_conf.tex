@@ -1,118 +1,14 @@
-%% bare_conf.tex
-%% V1.4b
-%% 2015/08/26
-%% by Michael Shell
-%% See:
-%% http://www.michaelshell.org/
-%% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
-%% conference paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/pkg/ieeetran
-%% and
-%% http://www.ieee.org/
-
-%%*************************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE! 
-%% User assumes all risk.
-%% In no event shall the IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%
-%% This work is distributed under the LaTeX Project Public License (LPPL)
-%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
-%% distributed and modified. A copy of the LPPL, version 1.3, is included
-%% in the base LaTeX documentation of all distributions of LaTeX released
-%% 2003/12/01 or later.
-%% Retain all contribution notices and credits.
-%% ** Modified files should be clearly indicated as such, including  **
-%% ** renaming them and changing author support contact information. **
-%%*************************************************************************
-
-
-% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
-% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
-% *** with production work. The IEEE's font choices and paper sizes can   ***
-% *** trigger bugs that do not appear when using other class files.       ***                          ***
-% The testflow support page is at:
-% http://www.michaelshell.org/tex/testflow/
 
 
 
 \documentclass[conference]{IEEEtran}
-% Some Computer Society conferences also require the compsoc mode option,
-% but others use the standard conference format.
-%
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[conference]{../sty/IEEEtran}
-
-
-
-
-
-% Some very useful LaTeX packages include:
-% (uncomment the ones you want to load)
-
-
-% *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/pkg/ifpdf
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
-
-
-
-
-
-
-% *** CITATION PACKAGES ***
-%
 \usepackage{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of the IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off
-% such as if a citation ever needs to be enclosed in parenthesis.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 5.0 (2009-03-20) and later if using hyperref.sty.
-% The latest version can be obtained at:
-% http://www.ctan.org/pkg/cite
-% The documentation is contained in the cite.sty file itself.
-
-
 
 
 
 
 % *** GRAPHICS RELATED PACKAGES ***
+
 %
 \ifCLASSINFOpdf
   \usepackage[pdftex]{graphicx}
@@ -144,6 +40,9 @@
 \usepackage{subcaption}
 \usepackage{mathtools}
 
+\usepackage[numbers]{natbib}
+% Appearance of the bibliography
+\bibliographystyle{unsrtnat}
 
 \definecolor{lightGrey}{RGB}{240,240,240}
 
@@ -151,44 +50,10 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
-%
-% paper title
-% Titles are generally capitalized except for words such as a, an, and, as,
-% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
-% not capitalized unless they are the first or last word of the title.
-% Linebreaks \\ can be used within to get better formatting as desired.
-% Do not put math or special symbols in the title.
+
 \title{Introducing Virtual Reality \\ in Robot Assisted Minimally Invasive \\ Surgery Team Training}
 
 
-% author names and affiliations
-% use a multiple column layout for up to three different
-% affiliations
-%\author{\IEEEauthorblockN{Michael Shell}
-%\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-%Georgia Institute of Technology\\
-%Atlanta, Georgia 30332--0250\\
-%Email: http://www.michaelshell.org/contact.html}
-%\and
-%\IEEEauthorblockN{Homer Simpson}
-%\IEEEauthorblockA{Twentieth Century Fox\\
-%Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\and
-%\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
-%\IEEEauthorblockA{Starfleet Academy\\
-%San Francisco, California 96678--2391\\
-%Telephone: (800) 555--1212\\
-%Fax: (888) 555--1212}}
-
-% conference papers do not typically use \thanks and this command
-% is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
-% after \documentclass
-
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
-% 
 \author{\IEEEauthorblockN{Nicklas Haagh Christensen$^{1}$,
 Frederik Falk$^{2}$,
 Oliver GyldenBerg Hjermitslev$^{3}$, \\
@@ -197,17 +62,6 @@ Niclas Hjorth Stjernholm$^{5}$}
 \IEEEauthorblockA{$^{1, 2, 3, 4, 5}$ School of Information and Communication Technology\\
 Aalborg University, Aalborg Denmark\\ 
 $^{1}$nhch14@student.aau.dk, $^{2}$ffalk13@student.aau.dk, $^{3}$ohjerm14@student.aau.dk,\\ $^{4}$aniko14@student.aau.dk and $^{5}$nstjer14@student.aau.dk}}
-
-
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
-
-
-
-% make the title area
 \maketitle
 
 % As a general rule, do not put math, special symbols or citations
@@ -241,7 +95,7 @@ $^{1}$nhch14@student.aau.dk, $^{2}$ffalk13@student.aau.dk, $^{3}$ohjerm14@studen
 %motivation, why this project is important
 
 %I think this should be enough background
-Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future [cite taylor medical 2008]. In some areas, it has even become an essential technology [cite sivaraman robotics 2015]. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery, errors still occur [cite razmaria does 2014, punnen how 2013, sung oncologic 2016, raza long-term 2015]. Alemzadeh et al found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistakes. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors. The statistics are shown in \autoref{tab:Alam} [cite alemzadeh adverse 2016].
+Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future\citep{taylor_medical_2008} In some areas, it has even become an essential technology \citep{sivaraman_robotics_2015}. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery, errors still occur\citep{razmaria_does_2014, punnen_how_2013, sung_oncologic_2016,raza_long-term_2015}. Alemzadeh et al found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistakes. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors. The statistics are shown in \autoref{tab:Alam}\citep{alemzadeh_adverse_2016}.
 
 
 \begin{table}[H]
@@ -259,117 +113,22 @@ Possible passing of currents through instruments           & 6 (1.5\%)          
 Surgeon felt shocking at the surgeon-side console & 2 (0.5\%)                       \\
 N/A                                               & 77 (18.8\%)                     \\ \toprule
 \end{tabular}
-\caption{The most common sources of injury[cite alemzadeh adverse 2016]}
+\caption{The most common sources of injury\citep{alemzadeh_adverse_2016}}
 \label{tab:Alam}
 \end{table}
 
 %small one-sentence conclusion on this? does it make sense as is?
-According to Alemzadeh et al, one key area of RAMIS that may be improved is the "human-machine interfaces and surgical simulators that train surgical teams for handling technical problems". Other researchers suggest a variety of methods to reduce injury numbers, such as dry lab training, simulated emergency handling (including in virtual reality (VR)), and even a complete remodelling of operating theatres [cite liberman training 2011, huser simulated 2014, ahmad ambulatory 2016, abelson virtual 2015]. These all suggest that more training is beneficial to reduce error rates.
+According to Alemzadeh et al, one key area of RAMIS that may be improved is the "human-machine interfaces and surgical simulators that train surgical teams for handling technical problems". Other researchers suggest a variety of methods to reduce injury numbers, such as dry lab training, simulated emergency handling (including in virtual reality (VR)), and even a complete remodelling of operating theatres\citep{liberman_training_2011, huser_simulated_2014, ahmad_ambulatory_2016, abelson_virtual_2015}. These all suggest that more training is beneficial to reduce error rates.
 
 %am i putting words in her mouth?
-During an interview with, and observation of, Jane Petersson, First Nurse Assistant and Nurse Specialist in Robotic Surgery at Aalborg University Hospital and MinimalInvasiv UdviklingsCenter (Minimally Invasive Education Centre, MIUC), she stated that some of the most important aspects of RAMIS are routine and training, especially as part of a team. This claim is substantiated by several studies [cite moorthy qualitative 2004, chandra comparison 2010], showing clear improvements for experienced surgeons, but also a significant learning curve.
+During an interview with, and observation of, Jane Petersson, First Nurse Assistant and Nurse Specialist in Robotic Surgery at Aalborg University Hospital and MinimalInvasiv UdviklingsCenter (Minimally Invasive Education Centre, MIUC), she stated that some of the most important aspects of RAMIS are routine and training, especially as part of a team. This claim is substantiated by several studies, showing clear improvements for experienced surgeons, but also a significant learning curve\citep{moorthy_human_2005,chandra_comparison_2010}.
 
 Currently, MIUC's team training consists of two full day sessions for op to five nurses and surgeons. They teach both theory and practice of the da Vinci surgical system and RAMIS. This includes setup ("docking", calibration and insertion of tools and camera), surgery, troubleshooting, and finishing ("undocking", including removal of tools from the patient). Common troubleshooting procedures include recoverable and unrecoverable situations, CO$_2$ leaks, and emergency undocking (converting to open surgery). Important aspects of this training is communication between all the trainees, as well as routine and error handling.
 
 %points to make:
 %surgery and training = expensive
 %more practice = better
-We, together with Jane Petersson, believe this can be extended to team training in VR as shown by Abelson et al in conventional surgery [cite abelson again] and Huser et al simulating full surgery teams doing emergency fibrillation. VR training has the benefits of being cost-effective compared to regular RAMIS training (which costs 6,000-8,000 DKK per person), at the cost of reduced accuracy, as well as enabling concurrent multi-user functionality in different locations. This would allow surgeons and nurses to train certain scenarios at their work or at home instead of travelling to certified institutions. 
-
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that the IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a 
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-% labels, the optional argument to \subfloat must be present. If a
-% subcaption is not desired, just leave its contents blank,
-% e.g., \subfloat[].
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table and, given that table
-% captions serve much like titles, are usually capitalized except for words
-% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
-% and up, which are usually not capitalized unless they are the first or
-% last word of the caption. Table text will default to \footnotesize as
-% the IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that the IEEE does not put floats in the very first column
-% - or typically anywhere on the first page for that matter. Also,
-% in-text middle ("here") positioning is typically not used, but it
-% is allowed and encouraged for Computer Society conferences (but
-% not Computer Society journals). Most IEEE journals/conferences use
-% top floats exclusively. 
-% Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the
-% \fnbelowfloat command of the stfloats package.
+We, together with Jane Petersson, believe this can be extended to team training in VR as shown by Abelson et al in conventional surgery and Huser et al simulating full surgery teams doing emergency fibrillation\citep{abelson_virtual_2015,huser_simulated_2014}. VR training has the benefits of being cost-effective compared to regular RAMIS training (which costs 6,000-8,000 DKK per person), at the cost of reduced accuracy, as well as enabling concurrent multi-user functionality in different locations. This would allow surgeons and nurses to train certain scenarios at their work or at home instead of travelling to certified institutions. 
 
 
 
@@ -523,13 +282,14 @@ The authors would like to thank Jane Petersson and Johan Poulsen at the MIUC dep
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
+%\begin{thebibliography}{1}
+\bibliography{bib/bib}
+\label{bib:biblio}
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-\end{thebibliography}
+%\end{thebibliography}
 
 
 
