@@ -39,6 +39,13 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{subcaption}
 \usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+
+
 
 \usepackage[numbers]{natbib}
 % Appearance of the bibliography
@@ -50,7 +57,6 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
-
 \title{Introducing Virtual Reality \\ in Robot Assisted Minimally Invasive \\ Surgery Team Training}
 
 
@@ -63,6 +69,7 @@ Niclas Hjorth Stjernholm$^{5}$}
 Aalborg University, Aalborg Denmark\\ 
 $^{1}$nhch14@student.aau.dk, $^{2}$ffalk13@student.aau.dk, $^{3}$ohjerm14@student.aau.dk,\\ $^{4}$aniko14@student.aau.dk and $^{5}$nstjer14@student.aau.dk}}
 \maketitle
+\thispagestyle{fancy}
 
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
