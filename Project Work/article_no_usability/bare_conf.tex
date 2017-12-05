@@ -1,0 +1,312 @@
+
+
+
+\documentclass[conference]{IEEEtran}
+\usepackage{cite}
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\fancyhf{}
+\pagestyle{fancy}
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+
+
+
+\usepackage[numbers]{natbib}
+
+\definecolor{lightGrey}{RGB}{240,240,240}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+\title{Introducing Virtual Reality \\ in Robot Assisted Minimally Invasive \\ Surgery Team Training}
+
+
+\author{\IEEEauthorblockN{Nicklas Haagh Christensen$^{1}$,
+Frederik Falk$^{2}$,
+Oliver Gyldenberg Hjermitslev$^{3}$, \\
+Atanas Atanasov Nikolov$^{4}$ and
+Niclas Hjorth Stjernholm$^{5}$}
+\IEEEauthorblockA{$^{1, 2, 3, 4, 5}$ School of Information and Communication Technology\\
+Aalborg University, Aalborg Denmark\\ 
+$^{1}$nhch14@student.aau.dk, $^{2}$ffalk13@student.aau.dk, $^{3}$ohjerm14@student.aau.dk,\\ $^{4}$aniko14@student.aau.dk and $^{5}$nstjer14@student.aau.dk}}
+\maketitle
+\thispagestyle{fancy}
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+
+\input{abstract.tex}
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+%description of the situation and the problem
+%description of the factors involved
+%source everything
+%motivation, why this project is important
+
+%I think this should be enough background
+Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future\citep{taylor_medical_2008} In some areas, it has even become an essential technology \citep{sivaraman_robotics_2015}. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery, errors still occur\citep{razmaria_does_2014, punnen_how_2013, sung_oncologic_2016,raza_long-term_2015}. Alemzadeh et al found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistakes. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors. The statistics are shown in \autoref{tab:Alam}\citep{alemzadeh_adverse_2016}.
+
+
+\begin{table}
+\centering
+\begin{tabular}{@{}lr@{}}
+\toprule
+\multicolumn{2}{l}{\textbf{Injury Reports (Total = 410)}}                           \\ \midrule
+\textbf{Example Causes}                           & \textbf{Number of Reports (\%)} \\ \midrule
+Device malfunctions                               & 254 (62.0\%)                    \\
+Surgeon/staff mistake                             & 29 (7.1\%)                      \\
+Improper positioning of the patient               & 17 (4.1\%)                      \\
+Inherent risks of surgery and patient history     & 16 (3.9\%)                      \\
+Burning of tissues near port incisions            & 9 (2.2\%)                       \\
+Possible passing of currents through instruments           & 6 (1.5\%)                       \\
+Surgeon felt shocking at the surgeon-side console & 2 (0.5\%)                       \\
+N/A                                               & 77 (18.8\%)                     \\ \toprule
+\end{tabular}
+\caption{The most common sources of injury\citep{alemzadeh_adverse_2016}}
+\label{tab:Alam}
+\end{table}
+
+%small one-sentence conclusion on this? does it make sense as is?
+According to Alemzadeh et al, one key area of RAMIS that may be improved is the "human-machine interfaces and surgical simulators that train surgical teams for handling technical problems". Other researchers suggest a variety of methods to reduce injury numbers, such as dry lab training, simulated emergency handling (including in virtual reality (VR)), and even a complete remodelling of operating theatres\citep{liberman_training_2011, huser_simulated_2014, ahmad_ambulatory_2016, abelson_virtual_2015}. These all suggest that more training is beneficial to reduce error rates.
+
+%am i putting words in her mouth?
+During an interview with, and observation of, Jane Petersson, First Nurse Assistant and Nurse Specialist in Robotic Surgery at Aalborg University Hospital and MinimalInvasiv UdviklingsCenter (Minimally Invasive Education Centre, MIUC), she stated that some of the most important aspects of RAMIS are routine and training, especially as part of a team. This claim is substantiated by several studies, showing clear improvements for experienced surgeons, but also a significant learning curve\citep{moorthy_human_2005,chandra_comparison_2010}.
+
+Currently, MIUC's team training consists of two full day sessions for up to five nurses and surgeons. They teach both theory and practice of the da Vinci surgical system and RAMIS. This includes setup ("docking", calibration and insertion of tools and camera), surgery, troubleshooting, and finishing ("undocking", including removal of tools from the patient). Common troubleshooting procedures include recoverable and unrecoverable situations, CO$_2$ leaks, and emergency undocking (converting to open surgery). Important aspects of this training is communication between all the trainees, as well as routine and error handling.
+
+%points to make:
+%surgery and training = expensive
+%more practice = better
+We, together with Jane Petersson, believe this can be extended to team training in VR as shown by Abelson et al in conventional surgery and Huser et al simulating full surgery teams doing emergency fibrillation\citep{abelson_virtual_2015,huser_simulated_2014}. VR training has the benefits of being cost-effective compared to regular RAMIS training (which costs 6,000-8,000 DKK per person), at the cost of reduced accuracy, as well as enabling concurrent multi-user functionality in different locations. This would allow surgeons and nurses to train certain scenarios at their work or at home instead of travelling to certified institutions. 
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{Figures/drapes.pdf}
+		\caption{Drapes used to sterilise the robot arms}
+		\label{fig:drapes}
+	\end{subfigure}	
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{Figures/port.pdf}
+		\caption{Air seal and tool port inserted into a training doll}
+		\label{fig:port}
+	\end{subfigure}
+
+	\begin{subfigure}[b]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{Figures/tools.pdf}
+		\caption{Operation tools used by the robot inside a patient}
+		\label{fig:tools}
+	\end{subfigure}
+	\caption{Key objects during robot surgery. The robot arms of the da Vinci surgical system, ports used to insert the laparoscopic tools into the patient}
+	\label{Fig:fieldresult}
+\end{figure}
+
+\section{Context Study}
+System requirements were defined after a series of observations and interviews with Jane Petersson and Johan Poulsen. Active observations of robot surgery, surgeon training, and team training for were needed to assess the implementation requirements whereas semi-structured interviews with experts informing the design. 
+
+\autoref{Fig:fieldresult} shows the most important objects during RAMIS. The top image shows a nurse preparing the robot arms by covering them in drapes to sterilize the equipment. An important aspect of this preparation is to place the arms correctly to avoid collisions during surgery. The middle image shows the ports that are inserted in the patient. The placement and rotation of these are important and are therefore trained repeatedly during the sessions. The bottom image shows the operating tools that are latched on to the robot arms and through the ports on the patient. These tools perform a wide variety of tasks depending on the type of tool such as cutting and grabbing tissue.
+
+The interviews with Jane Petersson focused primarily on the important aspects of team training for surgical staff. These include communication between nurses, understanding roles in the operating room, and an introduction to the da Vinci surgical system. During training, the instructor will spend time with the trainees getting to know the robot and show important steps such as placement of the arms, insertion of ports and instruments, controls of the robot, and teach the different error messages. The trainees will then have to use their knowledge and communicate with each other when they are operating on a live pig later. This way they gain hands-on experience with the robot and its functionalities, according to Jane Petersson. She also mentioned that it is important that the instructor or someone with RAMIS experience is nearby as questions always arise. The communication is therefore not only trainee-to-trainee, but also largely trainee-to-instructor.
+
+During RAMIS there are usually two nurses present, one surgeon, one surgeon assistant, and one anaesthetic nurse or doctor. The surgeon will sit at the surgeon console, controlling the arms of the robot while looking into a stereoscopic display. The sterile nurse and the surgeon assistant (sometimes first nurse assistant) assist the surgery by providing the right tools, monitoring the patient. The second nurse, called the circulating nurse or \textit{floor nurse} is not sterile and can therefore enter and exit the operating room as needed and perform tasks that would otherwise contaminate the other nurses. An overview of the operating room (OR) including the roles of each member of staff is visualized in \autoref{fig:overview}.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=0.48\textwidth]{Figures/overview.pdf}
+ \caption{An overview of the operating room from the field observations}
+ \label{fig:overview}
+ \end{figure}
+ 
+The training room during team training is much smaller than the OR and space can be a problem in this context. Another benefit of virtualising team training would therefore be more space.
+
+Observations of the team training emphasized the importance of precision. When dealing with surgery every variable is situation dependent. This means there is no universal way of e.g. placement and orientation of the ports and tools, tilt of operating table, or even manual control of the laporascopic tools. These procedures require concentration and are constantly evaluated and corrected by the nurse or surgeon performing them. Trainees are given visual feedback from screens placed in the room. These screens show the camera inside the patient. 
+
+
+A lot of questions arise during training. These questions are often directed at the instructor. The instructor then gives an in-depth answer while often also visualizing it using the tools and robot. These questions come sporadically and often unpredictably and it is therefore important that an instructor is nearby to make sure the procedure continues. Team training also prepares the nurses for emergencies, specificly emergency undocking of the robot. When an emergency undocking is issued, the two assistants at the robot has to remove the arms and the ports on the patient and prepare for an open surgery, while the circulating nurse assists by calling for assistance and preparing the surgeon for open surgery. During this procedure precision and accuracy is less important, instead the time taken to perform the procedure becomes essential. 
+
+
+%\subsection{Design}
+%Based on our field work .... 
+%We used Unreal engine to.... 
+%
+%Interviews, observations, artefact models and all field work leading to the design of the robot, room and tasks implemented in the current system. Remember to argue for the lack of precision in the simulator and why we implemented emergency undocking since everything else in team training is not viable. 
+%Then instead we focus on the usability and make a shader that outline objects of interest, enable communication between participants, multiplayer, and in general make an exploratory project instead. We aim to answer if VR and Nurse team training is viable and what future projects should focus on when implementing in this context in VR. OUr experience is that there's a lot of talking and that's why it is necessary to have communication. There's a lot of showing and situation dependent illustrations that is not viable within our time constraints. 
+%Remember to mention that we designed it all in unreal engine 4 and with the htc vive headset. 
+%An idea in unrealæ was to implement IK hanldes and make the robot interactable but Unreal does not allow for this since the FABRIK affector position cannot be interacted with in real time. 
+
+\section{Method}
+An expert review with Johan Poulsen, head surgeon at Aalborg University Hospital (AUH), and Jane Petersson. The test consisted of a system test and an interview. The system test allowed both participants to appear in a virtual environment modelled after \autoref{fig:overview} and interact with various items following a short introduction to VR. The interview focused on the viability of VR simulations in robotic surgery training and the prioritization of future work that would allow this. The test took place at Aalborg University's Audio-Visual Arena.
+%Two types of tests were performed, a usability test and an expert review with Jane Petersson and Johan Poulsen, head surgeon at Aalborg University Hospital (AUH). Both tests were part of a system review. The system allowed multiple concurrent users to act in an operation environment with the intent of ultimately allowing RAMIS surgeons and nurses to train specific scenarios in VR with emphasis on communication and routine. The scenario is emergency undocking because of low precision requirement and time constraints. The test procedure is listed below:
+
+The introduction to VR was performed one at a time. After a short introduction, participants were fitted with an HTC Vive head mounted display (HMD) and controllers. The training scenario allowed them to teleport to a table with various interactable objects in order to learn the controls, physics, and accuracy of the simulation. They were given as much time as needed to get comfortable with the movement and controls.
+
+Prior to this, participants were informed of the two actions they could perform, namely grabbing (using the HTC Vive controller's trigger) and teleporting (using the touchpad on the controller). Teleporting is important in VR since there is limited space to move around in the real world, and thus participants were also cautioned not to move outside the bounds of the Vive in order to avoid real world collisions. They were also informed about the possibility of VR sickness and that should it happen, they were to inform the observers and disengage from the system\citep{barrett_side_2004}.
+
+After both were finished, both Jane Petersson and Johan Poulsen were mounted with an HMD at seperate computers. The specifications of these computers are shown in \autoref{tab:specs}. One computer set up hosting properties so the other could join. Due to issues with client-side authority, both computers tried hosting to allow both participants to interact with the environment.
+
+\begin{table}
+\centering
+\begin{tabularx}{0.48\textwidth}{X X X X}
+\toprule
+                     & \textit{Computer A} & \textit{Computer B} & \textit{Computer C} \\ \midrule \rowcolor{lightGrey}
+\textbf{CPU}         & Intel Core i7-6700K & Intel Core i7-4770  & Intel Core i7-6700  \\
+
+\textbf{GPU}         & Nvidia GTX 1080     & Nvidia GTX 980      & Nvidia GTX 980Ti    \\  \rowcolor{lightGrey}
+
+\textbf{RAM} 		 & 32GB                & 16GB                & 16GB                 \\ \toprule
+\end{tabularx}
+\caption{Specifications of the computers used}
+\label{tab:specs}
+\end{table}
+
+The VR environment allowed both participants to interact with a simplified virtual robot modelled after the da Vinci Si. Also included was a full model of what this robot could look like, shown in \autoref{fig:dav}. Only the simple model was rigged for interactivity due to time constraints. They were able to move the arms and fit it with tools. Additionally, they were able to interact with items such as scissors found in the room.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.48\textwidth]{Figures/TempRender.png}
+\caption{Virtual da Vinci Si system}
+\label{fig:dav}
+\end{figure}
+
+An overview of roles and tasks during emergency undocking is shown in \autoref{fig:undock_workflow}. This overview was placed on the wall in the virtual operating theatre to show what scenarios could look like and what actions were available in the simulation.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.48\textwidth]{figures/workflow_chart}
+	\caption{Workchart showing the flow for each role regarding emergency undocking}
+	\label{fig:undock_workflow}
+\end{figure}
+
+This scenario was chosen since it enables training vital procedures that can be represented in VR with fair accuracy. According to Jane Petersson, these are the most important tasks to train since they are what trainees undergoing team training at MIUC usually struggle with the most. Additionally, it would allow trainees to practice emergency procedures in a safe environment.
+
+%The participants used an HTC Vive head mounted display (HMD) and motion controllers connected to a non-dedicated server hosted on computer A. Computer C was located in a separate room from computer A and B. The specifications of these computers are shown in \autoref{tab:specs}. 
+
+During the tests, participants' video feed were displayed on the computer monitors for observation. They were able to communicate in the room if necessary. In the event of system error or when participants forgot tasks, controls, or otherwise were confused, facilitators were present to assist. 
+
+%After the test, participants were given a questionnaire. The questionnaire used in the usability test contained the System Usability Scale (SUS) and additional questions regarding age, gender, and familiarity with VR. Following that, a short interview was held to ensure their experience matched the expectations of the test, primarily to ensure they understood the tasks. Participant performance was not observed.
+
+An expert review was held after the usability test to assess the utility of the system qualitatively. This review is also done to determine if there are critical errors in the simulation. Jane Petersson and Johan Poulsen both participated in this interview after observing and trying the system themselves. The results from this review were used to determine the viability of the concept. The purpose was to identify the features, scenarios, and key considerations needed for such a system to be fully implemented in institutions such as MIUC, to allow VR training instead of or as an addition to regular training.
+
+%The scene used for testing is described in Section \ref{}. This scene was created to facilitate a simulated emergency undocking of the da Vinci surgical system. We used the contextual study to create the following procedure: REPEAT
+
+\section{Results}
+%\input{results.tex}
+%\input{Fake_results/fake_results.tex}
+\input{Fake_results/fake_interview_results.tex}
+
+
+%What did we find out
+%
+%This is discussion
+%
+%None of the participants in the usability test were trained in the medical field, which affects the validity of the results. This is an acceptable risk given that this is a usability test and not a utility focused test. 
+
+\input{Disc.tex}
+
+%\section{Conclusion}
+%What does it mean
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgment
+\section*{Acknowledgment}
+The authors would like to thank Jane Petersson and Johan Poulsen at the MIUC department on Aalborg University Hospital for participation and engagement in the project. And for letting us observe training sessions as well as an operation.
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,bib/bib}
+\label{bib:biblio}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+
