@@ -55,7 +55,7 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
-\title{Feasibility of Robot Assisted Minimally Invasive \\ Surgery Team Training in Virtual Reality}
+\title{Feasibility of Team Training in Virtual Reality \\ for Robot-Assisted Minimally Invasive Surgery}
 
 
 \author{\IEEEauthorblockN{Nicklas Haagh Christensen$^{1}$,
@@ -189,16 +189,23 @@ Team training also prepares the nurses for emergencies, specifically emergency u
 %An idea in unrealæ was to implement IK hanldes and make the robot interactable but Unreal does not allow for this since the FABRIK affector position cannot be interacted with in real time. 
 
 \section{Method}
-An OR was created in Unreal Engine 4 to simulate a real operating environment. This room contained a simplified model of the da Vinci Si robot. It had interactable arms that could be moved by dragging a red cube to their desired position. The robot solves its inverse kinematics using cyclic coordinate descent \citep{wang_combined_1991}. Furthermore, an operating table was situated below the robot's arms. On a table in the room were four laparoscopic operating instruments. Users were able to grab them and place them on the robot's arms. Regular tools, such as scissors and scalpels were also available on a sterile table. These were available to indicate the sort of scenarios that this system should be able to simulate, such as emergency undocking. Every object in the room used an outlining shader to indicate interactability. 
+An OR was created in Unreal Engine 4 using the Proteus VR multiplayer template to simulate a real operating environment in order to show the capabilities of VR and its potential use in RAMIS training. The scene is shown in \autoref{fig:scene}. This room contained a simplified model of the da Vinci Si robot. It had interactable arms that could be moved by dragging a red cube to their desired position. The robot solves its inverse kinematics using cyclic coordinate descent \citep{wang_combined_1991}. Furthermore, an operating table was situated below the robot's arms. On a table in the room were four laparoscopic operating instruments. These were interactable and could be placed in the robot's arms. Regular tools, such as scissors and scalpels were also available on a sterile table. These were available to indicate the sort of scenarios that this system should be able to simulate, such as emergency undocking. Every object in the room used an outlining shader to indicate interactability. 
 
-An expert review with Johan Poulsen and Jane Petersson was conducted, consisting of a system test and an interview. The system test allowed both participants to appear in a virtual environment modelled after \autoref{fig:overview} and interact with various items following a short introduction to VR. The interview focused on the viability of VR simulations in robotic surgery training and the prioritization of future work that would allow this. The test took place at Aalborg University's Audio-Visual Arena.
+\begin{figure}[tp]
+\centering
+\includegraphics[width=0.48\textwidth]{Figures/Scene.PNG}
+\caption{The scene used in the expert review}
+\label{fig:scene}
+\end{figure}
+
+An expert review with Johan Poulsen and Jane Petersson was conducted, consisting of a test using the described system followed by an interview. The system test allowed both participants to appear in the virtual environment and interact with various items following a short introduction to VR. The interview focused on the viability of VR simulations in robotic surgery training and the prioritization of future work that would allow this. The test took place at Aalborg University's Audio-Visual Arena.
 %Two types of tests were performed, a usability test and an expert review with Jane Petersson and Johan Poulsen, head surgeon at Aalborg University Hospital (AUH). Both tests were part of a system review. The system allowed multiple concurrent users to act in an operation environment with the intent of ultimately allowing RAMIS surgeons and nurses to train specific scenarios in VR with emphasis on communication and routine. The scenario is emergency undocking because of low precision requirement and time constraints. The test procedure is listed below:
 
 The introduction to VR was performed one at a time. After a short introduction, participants were fitted with an HTC Vive head mounted display (HMD) and controllers. The training scenario allowed them to teleport to a table with various interactable objects in order to learn the controls, physics, and accuracy of the simulation. They were given as much time as needed to get comfortable with the movement and controls.
 
-Prior to this, participants were informed of the two actions they could perform, namely grabbing (using the HTC Vive controller's trigger) and teleporting (using the touchpad on the controller). Teleporting is important in VR since there is limited space to move around in the real world, and thus participants were also cautioned not to move outside the bounds of the Vive in order to avoid real world collisions. They were also informed about the possibility of VR sickness and that should it happen, they were to inform the observers and disengage from the system\citep{barrett_side_2004}.
+Prior to this, participants were informed of the two actions they could perform, namely grabbing (using the HTC Vive controllers' triggers) and teleporting (using the touchpads on the controllers). Teleporting is important in VR since there is limited space to move around in the real world, and thus participants were also cautioned not to move outside the bounds of the Vive in order to avoid collisions. They were also informed about the possibility of VR sickness and that should it happen, they were to inform the observers and disengage from the system \citep{barrett_side_2004}.
 
-After both were finished, both Jane Petersson and Johan Poulsen were mounted with an HMD at seperate computers. The specifications of these computers are shown in \autoref{tab:specs}. One computer set up hosting properties so the other could join. Due to issues with client-side authority, both computers tried hosting to allow both participants to interact with the environment.
+After both were finished, both Jane Petersson and Johan Poulsen were provided with an HMD at seperate computers. The specifications of these computers are shown in \autoref{tab:specs}. One computer set up hosting properties so the other could join. Due to issues with client-side authority, both computers tried hosting to allow both participants to interact with the environment.
 
 \begin{table}
 \centering
@@ -215,16 +222,16 @@ After both were finished, both Jane Petersson and Johan Poulsen were mounted wit
 \label{tab:specs}
 \end{table}
 
-The VR environment allowed both participants to interact with a simplified virtual robot modelled after the da Vinci Si. Also included was a full model of what this robot could look like, shown in \autoref{fig:dav}. Only the simple model was rigged for interactivity due to time constraints. They were able to move the arms and fit it with tools. Additionally, they were able to interact with items such as scissors found in the room.
+The VR environment allowed both participants to interact with virtual robot. Also included was a full model of what this robot could look like, shown in \autoref{fig:dav}. Only the simple model was rigged for interactivity due to time constraints.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.48\textwidth]{Figures/TempRender.png}
-\caption{Virtual da Vinci Si system}
+\caption{3D modelled da Vinci Si robot}
 \label{fig:dav}
 \end{figure}
 
-An overview of roles and tasks during emergency undocking is shown in \autoref{fig:undock_workflow}. This overview was placed on the wall in the virtual operating theatre to show what scenarios could look like and what actions were available in the simulation.
+A flowchart of roles and tasks during emergency undocking is shown in \autoref{fig:undock_workflow}. This overview was placed on the wall in the virtual operating theatre to show what scenarios could look like and what actions were available in the simulation. 
 
 \begin{figure}[h]
 	\centering
@@ -237,11 +244,11 @@ This scenario was chosen since it enables training vital procedures that can be 
 
 %The participants used an HTC Vive head mounted display (HMD) and motion controllers connected to a non-dedicated server hosted on computer A. Computer C was located in a separate room from computer A and B. The specifications of these computers are shown in \autoref{tab:specs}. 
 
-During the tests, participants' video feed were displayed on the computer monitors for observation. They were able to communicate in the room if necessary. In the event of system error or when participants forgot tasks, controls, or otherwise were confused, facilitators were present to assist. 
+During the tests, participants' video feed were displayed on the computer monitors for observation. They were able to communicate in the room if necessary. In the event of system error or when participants forgot controls, or otherwise were confused, facilitators were present to assist. 
 
 %After the test, participants were given a questionnaire. The questionnaire used in the usability test contained the System Usability Scale (SUS) and additional questions regarding age, gender, and familiarity with VR. Following that, a short interview was held to ensure their experience matched the expectations of the test, primarily to ensure they understood the tasks. Participant performance was not observed.
 
-An expert review was held after the usability test to assess the utility of the system qualitatively. This review is also done to determine if there are critical errors in the simulation. Jane Petersson and Johan Poulsen both participated in this interview after observing and trying the system themselves. The results from this review were used to determine the viability of the concept. The purpose was to identify the features, scenarios, and key considerations needed for such a system to be fully implemented in institutions such as MIUC, to allow VR training instead of or as an addition to regular training.
+The results from this review were used to determine the viability of the concept. The purpose was to identify the features, scenarios, and key considerations needed for such a system to be fully implemented in institutions such as MIUC, to allow VR training instead of or as an addition to regular training.
 
 %The scene used for testing is described in Section \ref{}. This scene was created to facilitate a simulated emergency undocking of the da Vinci surgical system. We used the contextual study to create the following procedure: REPEAT
 
@@ -266,7 +273,7 @@ An expert review was held after the usability test to assess the utility of the 
 
 
 % use section* for acknowledgment
-\section*{Acknowledgment}
+\section*{Acknowledgments}
 The authors would like to thank Jane Petersson and Johan Poulsen at the MIUC department on Aalborg University Hospital for participation and engagement in the project. And for letting us observe training sessions as well as an operation.
 
 % trigger a \newpage just before the given reference
