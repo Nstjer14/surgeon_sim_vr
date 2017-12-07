@@ -100,27 +100,27 @@ $^{1}$nhch14@student.aau.dk, $^{2}$ffalk13@student.aau.dk, $^{3}$ohjerm14@studen
 %motivation, why this project is important
 
 %I think this should be enough background
-Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future \citep{taylor_medical_2008}. In some areas, it has even become an essential technology \citep{sivaraman_robotics_2015}. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery, errors still occur \citep{razmaria_does_2014, punnen_how_2013, sung_oncologic_2016,raza_long-term_2015}. Alemzadeh et al. found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistakes. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors. The statistics are shown in \autoref{tab:Alam} \citep{alemzadeh_adverse_2016}.
+Surgical robotics has evolved quickly since the 1980's and will continue to do so in the future \citep{taylor_medical_2008}. In some areas, it has even become an essential technology \citep{sivaraman_robotics_2015}. Although robot assisted minimally invasive surgery (RAMIS) is at worst as effective and at best lowers injury, complication, and death rates significantly compared to conventional surgery, errors still occur \citep{razmaria_does_2014, punnen_how_2013, sung_oncologic_2016,raza_long-term_2015}. Alemzadeh et al. found that around 17.4\% of deaths during RAMIS occurred during the operation, and 7\% were due to staff mistakes \citep{alemzadeh_adverse_2016}. The majority of injuries were caused by device malfunction, but a not insignificant amount were due to staff errors. %The statistics are shown in \autoref{tab:Alam} .
 
 
-\begin{table}[H]
-\centering
-\begin{tabular}{@{}lr@{}}
-\toprule
-\multicolumn{2}{l}{\textbf{Injury Reports (Total = 410)}}                           \\ \midrule
-\textbf{Example Causes}                           & \textbf{Number of Reports (\%)} \\ \midrule
-Device malfunctions                               & 254 (62.0\%)                    \\
-Surgeon/staff mistake                             & 29 (7.1\%)                      \\
-Improper positioning of the patient               & 17 (4.1\%)                      \\
-Inherent risks of surgery and patient history     & 16 (3.9\%)                      \\
-Burning of tissues near port incisions            & 9 (2.2\%)                       \\
-Possible passing of currents through instruments           & 6 (1.5\%)                       \\
-Surgeon felt shocking at the surgeon-side console & 2 (0.5\%)                       \\
-N/A                                               & 77 (18.8\%)                     \\ \toprule
-\end{tabular}
-\caption{The most common sources of injury \citep{alemzadeh_adverse_2016}}
-\label{tab:Alam}
-\end{table}
+%\begin{table}[H]
+%\centering
+%\begin{tabular}{@{}lr@{}}
+%\toprule
+%\multicolumn{2}{l}{\textbf{Injury Reports (Total = 410)}}                           \\ \midrule
+%\textbf{Example Causes}                           & \textbf{Number of Reports (\%)} \\ \midrule
+%Device malfunctions                               & 254 (62.0\%)                    \\
+%Surgeon/staff mistake                             & 29 (7.1\%)                      \\
+%Improper positioning of the patient               & 17 (4.1\%)                      \\
+%Inherent risks of surgery and patient history     & 16 (3.9\%)                      \\
+%Burning of tissues near port incisions            & 9 (2.2\%)                       \\
+%Possible passing of currents through instruments           & 6 (1.5\%)                       \\
+%Surgeon felt shocking at the surgeon-side console & 2 (0.5\%)                       \\
+%N/A                                               & 77 (18.8\%)                     \\ \toprule
+%\end{tabular}
+%\caption{The most common sources of injury \citep{alemzadeh_adverse_2016}}
+%\label{tab:Alam}
+%\end{table}
 
 %small one-sentence conclusion on this? does it make sense as is?
 According to Alemzadeh et al., one key area of RAMIS that may be improved is the "human-machine interfaces and surgical simulators that train surgical teams for handling technical problems". Other researchers suggest a variety of methods to reduce injury numbers, such as dry lab training, simulated emergency handling (including in virtual reality (VR)), and even a complete remodelling of operating theatres \citep{liberman_training_2011, huser_simulated_2014, ahmad_ambulatory_2016, abelson_virtual_2015}. These all suggest that more training is beneficial to reduce error rates.
@@ -143,13 +143,12 @@ We hypothesize that VR can simulate this team training with sufficient accuracy,
 		\label{fig:drapes}
 	\end{subfigure}	
 	
-	\begin{subfigure}[b]{0.48\textwidth}
+	\begin{subfigure}[b]{0.24\textwidth}
 		\includegraphics[width=\textwidth]{Figures/port.pdf}
 		\caption{Air seal and tool port inserted into a training doll}
 		\label{fig:port}
 	\end{subfigure}
-
-	\begin{subfigure}[b]{0.48\textwidth}
+	\begin{subfigure}[b]{0.24\textwidth}
 		\includegraphics[width=\textwidth]{Figures/tools.pdf}
 		\caption{Operation tools used by the robot inside a patient}
 		\label{fig:tools}
