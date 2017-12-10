@@ -27,6 +27,13 @@
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc} 
+
+\usepackage[toc,page]{appendix} 
+
 \usepackage{sectsty} % Allows customizing section commands
 \allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
 
@@ -71,12 +78,15 @@
 %----------------------------------------------------------------------------------------
 
 \section{Purpose}
-The purpose of the interview was to understand how nurses and surgeons train to operate a da Vinci robot and perform RAMIS. 
+The purpose of the studies was to understand how nurses and surgeons train to operate a da Vinci robot and perform robot assisted minimal invasive surgery (RAMIS), as well as to get an evaluation of the finished product created on the basis of these interviews. 
 
 \section{Method}
 We observed a training session at MIUC followed by a semi-structured interview with Jane Petersson and Johan Poulsen to get an understanding of RAMIS and how surgeons practise. Furthermore, we performed a semi-structured interview with first assistant nurse Jane Petersson who is in charge of training nurses to handle the robot and how to act in a team environment.
+
+To evaluate the simulation created, an expert review was conducted with both Jane Petersson and Johan Poulsen.  They were both introduced to the simulation and virtual reality and were able to try the simulation. Afterwards a scripted interview was conducted. The script for this is shown in \autoref{sec:interview_script}.
+
 \section{Results}
-The results are split into two sections; one for the surgeon training at MIUC and the other for the interview with Jane Petersson regarding team training.
+The results are split into three sections; one for the surgeon training at MIUC, one for the other interview with Jane Petersson regarding team training and the last for the expert review of the simulation.
 
 \subsection{Surgeon Training at MIUC}
 The training sessions at MIUC varies depending on the skill level of the participants. In cases with skilled participants, the students takes on the role as instructors to help guide during the training session. This is beneficial as the surgeon often will be in charge of during surgery.
@@ -97,7 +107,27 @@ The team training consists of:
 
 During training, on the first day Jane Petersson starts by talking and showing how tasks are done, students observe. On the second day, students are expected to do most of the tasks themselves. At the end of the second day, Jane Petersson sabotages some of the equipment and the students have to find and fix it. Any mistakes done by the students are used for learning purpose. At the beginning of the training, Jane Petersson makes most of the decisions, however later the surgeon is expected to take the lead.
 
+\subsection{Expert Review}
+Jane Petersson and Johan Poulsen were both able to test the system. The following interview revealed that the system at present was satisfactory at simulating the scenario, but was not comprehensive enough to warrant implementation with them. They believed the interaction was sufficient, and that trainees didn’t require additional features, however they both stated that several features should be available to the instructors, such as scene change and reset, interacting with procedures and progress, as well as changing the rules during play (for example by introducing emergencies).
+
+One key point throughout the interview was realism. This was brought up many times during the interview, and the consensus was that the closer the simulation was to total realism, both with controls, models, and textures, the more it could replace or improve upon current training standards. This meant that, for example, the robot should have multiple end effectors to allow more realistic movement. The current da Vinci model has three control points and can rotate around itself which the simulated model does not. In addition, the robot itself should be moveable. Introducing tool ports would, together with the improved handling, allow for teaching docking and undocking in VR. Despite all this, draping the robot arms would need to be practiced at real facilities due to the need for accurate tactile feedback.
+
+Johan Poulsen stated that there were limitations, but that systems such as this could be a must-have for the future of RAMIS. He talked about fully integrating the system with current simulators such as RAMIS console and anaesthetic nurse simulators. This could allow full surgery team training. As noted from the context study, Jane Petersson sabotages the robot setup during team training in order to train the nurses’ and doctors’ communication and emergency handling skills. Being able to control even more factors in virtual reality, such as patient fever, would allow for more detailed training of both nurses and surgeons. This concept could also be extended to include scenarios and scenario control. By being able to reset the scene and load a scenario where the setup is an appendectomy would also improve the utility of the system thereby having multiple scenarios to choose from.
+
+Despite its limitations, the current version could be used to introduce medical students to RAMIS if realism was improved. Johan Poulsen also mentioned that, as there was no tactile feedback, the visuals in the scene had to become more realistic as the vision would overcompensate for the lack of tactile feedback. 
+
+Despite the current limitations both experts agreed that the controls of the system were intuitive and that the learning curve was appropriate for their level of expertise with VR. Observations also showed that they both learned to teleport, grab, and interact with the robot fast.
+
+
 \section{Conclusion}
 The observations and interviews have given an insight as to how both the surgeons and the nurses train and work with the da Vinci Surgical System. Furthermore, critical procedures have been explained by Jane Petersson. These procedures are a must know as failures within these could prove critical or even fatal.
+
+
+
+
+\newpage
+\appendix
+\chapter{Appendix}
+\input{appendices/interview_script.tex}
 
 \end{document}
