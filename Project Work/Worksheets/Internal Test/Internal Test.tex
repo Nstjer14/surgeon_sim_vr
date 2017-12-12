@@ -74,7 +74,7 @@
 
 \section{Purpose}
 
-The purpose was to test the system used in the expert review, including hardware load and frame times. This was done to ensure a "smooth" (pls fix) test and to determine whether potential issues could be attributed to physical limitations.
+The purpose was to test the system used in the expert review, including hardware load and frame times. This was done to ensure a "smooth" (pls fix) test and to determine whether potential issues could be attributed to physical limitations. Since the review and system test were both performed over LAN, no latency testing was performed.
 
 \subsection{Methods}
 
@@ -82,14 +82,14 @@ The test was performed at AAU's Audio-Visual Arena using the computers described
 
 \begin{table}
 \centering
-\begin{tabularx}{0.48\textwidth}{X X X X}
+\begin{tabularx}{0.48\textwidth}{X X X}
 \toprule
-                     & \textit{Computer A} & \textit{Computer B} & \textit{Computer C} \\ \midrule \rowcolor{lightGrey}
-\textbf{CPU}         & Intel Core i7-6700K & Intel Core i7-4770  & Intel Core i7-6700  \\
+                     & \textit{Computer A} & \textit{Computer B} \\ \midrule \rowcolor{lightGrey}
+\textbf{CPU}         & Intel Core i7-4770  & Intel Core i7-6700  \\
 
-\textbf{GPU}         & Nvidia GTX 1080     & Nvidia GTX 980      & Nvidia GTX 980    \\  \rowcolor{lightGrey}
+\textbf{GPU}         & Nvidia GTX 980      & Nvidia GTX 980    \\  \rowcolor{lightGrey}
 
-\textbf{RAM} 		 & 32GB                & 16GB                & 16GB                 \\ \toprule
+\textbf{RAM} 		 & 16GB                & 16GB                 \\ \toprule
 \end{tabularx}
 \caption{Specifications of the computers used}
 \label{tab:specs}
@@ -98,10 +98,42 @@ The test was performed at AAU's Audio-Visual Arena using the computers described
 Two players and two observers were present. The players moved around in an introduction scene and in the final scene used in the system review. The observers recorded data using MSI Afterburner and Fraps to measure CPU and GPU load as well as framerate.
 
 \subsection{Results}
-The users in the scene should be designated a specific role which entails different tasks depending on the amount of users in the current session. While completing the individual tasks is important, the primary focus of this exercise is to complete the overall task of saving the patient as one unit. This means that communication and cooperation is very important to the success of this goal.
+The results from the hardware monitoring is shown below. The range indicates roughly 10 minutes of play. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{B_usage.PNG}
+\caption{Hardware usage of Computer A}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{C_gpu.PNG}
+\includegraphics[width=0.9\textwidth]{C_cpu.PNG}
+\caption{Hardware usage of Computer B}
+\end{figure}
+
+The results from recording framerate is shown below.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{A_fps.PNG}
+\caption{Results from recording framerate in Computer A}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{B_fps.PNG}
+\caption{Results from recording framerate in Computer B}
+\end{figure}
+
 
 \subsection{Conclusion}
-The rules for the equipment is based on the observations and interview with Jane. These rules entails how the equipment should be used and handled by the users. As most of the equipment is only used for one specific use, it important that the users are aware of that specific use.
+The framerate results show line at 45 frames per second, however monitoring in the same scene before beginning the recording showed a steady 90 frames per second. We hypothesize that the recording software is at fault, and cannot accurately record framerate in virtual reality applications. This was, however, the only possible solution since no native software can log it. 
+
+The results show a steady decline in framerate for the client computer. This was confirmed in several tests to be the case for any computer used as client, but does not seem to be caused by overheating. The client's GPU usage steadily drops while CPU usage seems to jump. 
+
+This may be the fault of the Proteus multiplayer template for Unreal, and the issue could be writing to a file or otherwise adding data to an array that must be processed at each frame. The issue can be fixed by starting the scene using "25 minutes play time" instead of 10 minutes.
 
 %----------------------------------------------------------------------------------------
 
