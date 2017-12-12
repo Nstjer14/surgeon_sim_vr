@@ -33,6 +33,7 @@
 \usepackage[utf8]{inputenc} 
 
 \usepackage[toc,page]{appendix} 
+\usepackage{pdfpages}
 
 \usepackage{sectsty} % Allows customizing section commands
 \allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
@@ -70,6 +71,7 @@
 \date{\normalsize\today} % Today's date or a custom date
 
 \begin{document}
+\graphicspath{{figures/}}
 
 \maketitle % Print the title
 
@@ -78,10 +80,15 @@
 %----------------------------------------------------------------------------------------
 
 \section{Purpose}
-The purpose of the studies was to understand how nurses and surgeons train to operate a da Vinci robot and perform robot assisted minimal invasive surgery (RAMIS), as well as to get an evaluation of the finished product created on the basis of these interviews. 
+The purpose of the studies was to understand how nurses and surgeons train to operate a da Vinci robot and perform robot assisted minimal invasive surgery (RAMIS), as well as to asses what must be included in an surgery scenario.  Finally an evaluation of the finished product created is conducted on the basis of these interviews. 
 
 \section{Method}
-We observed a training session at MIUC followed by a semi-structured interview with Jane Petersson and Johan Poulsen to get an understanding of RAMIS and how surgeons practise. Furthermore, we performed a semi-structured interview with first assistant nurse Jane Petersson who is in charge of training nurses to handle the robot and how to act in a team environment.
+We observed a training session at MIUC followed by a semi-structured interview with Jane Petersson and Johan Poulsen to get an understanding of RAMIS and how surgeons practise. Furthermore, we performed a semi-structured interview with first assistant nurse Jane Petersson who is in charge of training nurses to handle the robot and how to act in a team environment.\\
+
+A contextual inquiry is conducted to collect information resulting in different analysis models.
+To analyse and retrieve information in the matter the main method used is a contextual inquiry. This includes the different analysing models and interviews. We observed a robot assisted surgery at Aalborg University Hospital performed on a living human being.
+
+The observation team took both pictures, notes, and some video from the operation. These illustrate the tasks and teamwork necessary to perform such an operation and were used to create different models used in contextual inquiries. The models used are; a physical model showing the layout of the room, a sequence model to clarify the work flow, and an artefact model showing objects used during the procedure.\\
 
 To evaluate the simulation created, an expert review was conducted with both Jane Petersson and Johan Poulsen.  They were both introduced to the simulation and virtual reality and were able to try the simulation. Afterwards a scripted interview was conducted. The script for this is shown in \autoref{sec:interview_script}.
 
@@ -107,6 +114,70 @@ The team training consists of:
 
 During training, on the first day Jane Petersson starts by talking and showing how tasks are done, students observe. On the second day, students are expected to do most of the tasks themselves. At the end of the second day, Jane Petersson sabotages some of the equipment and the students have to find and fix it. Any mistakes done by the students are used for learning purpose. At the beginning of the training, Jane Petersson makes most of the decisions, however later the surgeon is expected to take the lead.
 
+\subsection{Contextual Inquiry}
+The physical model shows the layout of the operation room and the personnel's workspaces. The figure includes doors and their movement as well as other objects. The layout is shown in \autoref{fig:layout}.
+
+\begin{figure}[hpbt]
+	\centering
+	\includegraphics[width=0.5\textwidth]{physical}
+	\caption{The phyiscal model showing the layout of the operation room}
+	\label{fig:layout}
+\end{figure}
+
+The physical enables the development and design of the room when creating the simulation.\\
+
+The sequence model is based on Jane Petersson's worksheet used in team training at MUIC. The sequence model is shown in \autoref{fig:sequence}.
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{sequencemodel}
+	\caption{Flowchart of the sequence model showing how the operation preparation and debrief is carried out}
+	\label{fig:sequence}
+\end{figure}
+
+The sequence model describes the actions necessary to both start the operation and to end it. This enables the design of the tasks which should be included in the simulation and their order of appearance to the user.
+The model shown is for an operation without any complications, which could lead to de-docking of the robot in an emergency.\\
+
+
+The Artefact models are shown in figures \ref{fig:drapes}, \ref{fig:camera}, \ref{fig:cam_close}, \ref{fig:port}, and \ref{fig:tools}. These are created from pictures taken during the observation. \autoref{fig:drapes} shows the plastic drapes used to cover the arms of the robot sterilising it. \autoref{fig:camera} shows the endoscopic camera during calibration. \autoref{fig:cam_close} shows the endoscopic camera up close. \autoref{fig:port} shows one of the ports used to insert the tools into the patient. \autoref{fig:tools} shows the tools used with the robot.
+
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{drapes.pdf}
+	\caption{The drapes used to cover the arms of the robot, sterilising them}
+	\label{fig:drapes}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{camera.pdf}
+	\caption{The camera used with the robot and a calibration tool}
+	\label{fig:camera}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{camera_close}
+	\caption{The endoscopic camera up close}
+	\label{fig:cam_close}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{port}
+	\caption{One of the ports used to insert the tools in the patient}
+	\label{fig:port}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{tools}
+	\caption{The tools used with the robot}
+	\label{fig:tools}
+\end{figure}
+
+
 \subsection{Expert Review}
 Jane Petersson and Johan Poulsen were both able to test the system. The following interview revealed that the system at present was satisfactory at simulating the scenario, but was not comprehensive enough to warrant implementation with them. They believed the interaction was sufficient, and that trainees didn’t require additional features, however they both stated that several features should be available to the instructors, such as scene change and reset, interacting with procedures and progress, as well as changing the rules during play (for example by introducing emergencies).
 
@@ -120,7 +191,9 @@ Despite the current limitations both experts agreed that the controls of the sys
 
 
 \section{Conclusion}
-The observations and interviews have given an insight as to how both the surgeons and the nurses train and work with the da Vinci Surgical System. Furthermore, critical procedures have been explained by Jane Petersson. These procedures are a must know as failures within these could prove critical or even fatal.
+The observations and interviews have given an insight as to how both the surgeons and the nurses train and work with the da Vinci Surgical System. Furthermore, critical procedures have been explained by Jane Petersson. These procedures are a must know as failures within these could prove critical or even fatal.\\
+
+The concept of introducing VR training in established RAMIS training sessions seems feasible, however with some caveats. Currently, the system is too basic to warrant implementation at MIUC according to Johan Poulsen, but could serve other purposes such as introducing medical students to RAMIS. Experts stated that the system would require a high level of realism to accurately show the procedure and be useful in RAMIS training.
 
 
 
@@ -129,5 +202,7 @@ The observations and interviews have given an insight as to how both the surgeon
 \appendix
 \chapter{Appendix}
 \input{appendices/interview_script.tex}
+\input{appendices/consents.tex}
+
 
 \end{document}
