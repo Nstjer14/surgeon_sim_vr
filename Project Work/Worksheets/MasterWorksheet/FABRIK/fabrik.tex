@@ -22,34 +22,37 @@ FABRIK is implemented in Unreal Engine's Animation Blueprint, but as this only a
 
 \subsection{FABRIK Algorithm Example}
 
-Figure \ref{} shows an example of a system consisting of four bones and an end effector. The goal of the algorithm is to get the outermost bone (P4) as close to the end effector (t) as possible and maintaining the original distance between each bone. 
+Figure \ref{fig:ab} shows an example of a system consisting of four bones and an end effector. The goal of the algorithm is to get the outermost bone (P4) as close to the end effector (t) as possible and maintaining the original distance between each bone. 
 The FABRIK algorithm starts by adding all bone lengths together to determine if the target is reachable or not. 
-As FABRIK is a heuristic bone translation algorithm it starts at the end effector P4 and sets its position to the target's position as seen in Figure \ref{•}. The new heuristic joint is called P'4 
+As FABRIK is a heuristic bone translation algorithm it starts at the end effector P4 and sets its position to the target's position as seen in Figure \ref{fig:ab}. The new heuristic joint is called P'4 
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\textwidth]{ab.PNG}
+\includegraphics[width=1\textwidth]{FABRIK/ab}
 \caption{First to stages in FABRIK; calculating positions based on end effector position and bone lengths}
+\label{fig:ab}
 \end{figure}
 
 A line is then drawn from P'4 to P3, and since the original distance have to be maintained, P'3 is translated to somewhere on that line as seen in Figure \ref{}(c). The position on the line is calculated by 
 
 $P'3 = (\hat{P3} - \hat{P4}) * d_{3}$
 
-This procedure is then repeated for each bone in the system, creating a heuristic position for all joints, as seen in Figure \ref{•}. This results in the root bone(P1) being translated as well. 
+This procedure is then repeated for each bone in the system, creating a heuristic position for all joints, as seen in Figure \ref{fig:cd}. This results in the root bone(P1) being translated as well. 
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\textwidth]{cd.PNG}
+\includegraphics[width=1\textwidth]{FABRIK/cd}
 \caption{Position of all joints are being recalculated, resulting in a slight offset from the root bone's original position}
+\label{fig:cd}
 \end{figure}
 
-The root joint is then moved back to its initial position and the same process now repeats in the other direction (root to outer joint) as seen in Figure \ref{}.
+The root joint is then moved back to its initial position and the same process now repeats in the other direction (root to outer joint) as seen in Figure \ref{fig:ef}.
 
 \begin{figure}[hbtp]
  \centering
- \includegraphics[width=\textwidth]{ef.PNG}
+ \includegraphics[width=1\textwidth]{FABRIK/ef}
  \caption{The same process now repeats, now where the root bone is moved back to its original position. These processes repeat until the end effector is within a set distance to the target}
+ \label{fig:ef}
  \end{figure}
   
 This process is then repeated until the end effector hits the target or gets sufficiently close. 
@@ -94,7 +97,7 @@ Backwards handles the heuristics of the algorithm and the flow of this program c
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{Flowchart.png}
+\includegraphics[width=1\textwidth]{FABRIK/Flowchart.png}
 \caption{Caption here}
 \label{fig:flow}
 \end{figure}
@@ -105,11 +108,12 @@ The results of this implementation is seen in \autoref{fig:results}. It is clear
 
 
 \begin{figure}[hbtp]
-\begin{subfigure}
-\includegraphics[width=0.48\textwidth]{Robot_state1.PNG}
+\begin{subfigure}[b]{0.48\textwidth}
+\includegraphics[width=1\textwidth]{FABRIK/Robot_state1.PNG}
 \caption{The robot and its bones in one state with the target visible}
-\end{subfigure} \begin{subfigure}
-\includegraphics[width=0.48\textwidth]{Robot_state2.PNG}
+\end{subfigure} 
+\begin{subfigure}[b]{0.48\textwidth}
+\includegraphics[width=1\textwidth]{FABRIK/Robot_state2.PNG}
 \caption{The robot in another state where the target has moved slightly}
 \end{subfigure}
 \label{fig:results}
@@ -120,7 +124,7 @@ Looking at the target out of reach as seen in \autoref{fig:outofreach}, the IK a
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=\textwidth]{Robot_OutOfReach.PNG}
+\includegraphics[width=1\textwidth]{FABRIK/Robot_OutOfReach.PNG}
 \caption{The arms when the target is out of reach}
 \end{figure}
 
