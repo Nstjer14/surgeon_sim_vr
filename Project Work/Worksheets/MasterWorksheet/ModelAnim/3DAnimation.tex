@@ -29,3 +29,5 @@ The animation was created in Autodesk Maya 2017, due to previous knowledge and i
 	\includegraphics[width=0.3\textwidth]{ModelAnim/IK3}
 	\caption{IK handles in Maya's workspace}
 \end{figure}
+
+Maya has two different IK solvers, named \textit{Single Chain IK solver} and \textit{Rotate Plane IK solver} (RP). This project uses the RP IK solver as it's end effector only tries to reach the position of the IK handle and not the orientation. This makes the bones' rotation more reliable. Furthermore, the entire bone chain can later be manipulated by the \textit{Twist Disc manipulator}.
