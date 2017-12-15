@@ -24,6 +24,7 @@
 \usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx}
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
@@ -77,25 +78,23 @@
 
 \section{Results}
 For the implementation of the “Da Vinci surgical system” in the Operating theatre simulation a Cyclic Coordinate Descent (CCD) Inverse Kinematic (IK) method is used. The IK finds values for all connected joints so that an end-effector reaches a desired position and orientation. Chin et al [1] compares different solutions to the IK problem. CCD is an optimisation method for minimising a nonlinear cost function. The method iterates through a list of variables and adjusts the values to minimise the cost. The use of CCD to solve the IK problem is documented by Wang and Chen [2]. CCD iterates through all joints one at a time starting from the outermost one. For each joint an angle is chosen which moves the end-effector closest to the desired position.
- \centering
+\begin{figure}[h]
+\centering
 \includegraphics[scale=1]{IKCCD sketch.png}
-\caption{•}
+\caption{Visual example of IK using CCD }
 \end{figure}
 Figure 1 Visual example of IK using CCD (add more creative caption)
 In Figure 1, a desired position T, end-effector position E and position of the current joint R1 calculating the rotation for R1 is achieved by calculating the dot product R1 T⋅R1 E and the cross product R1 T×R1 E, in both cases the vectors should be normalised. Using inverse cosine, it is possible to get the angle between the two vectors, and the cross product is used to show the direction in which the root needs to be rotated. In 2D the direction of the cross product is used, however in 3D the normalised cross product vector is multiplied by the angle between the two vectors providing three new angles, for each of the three axes respectively. Those angles are directly added to the current rotation of the root joint. This process is repeated for each joint in the list.
-$∠〖R_n E〗^→= ∠〖R_n E〗^→+[x,y,z]〖(cos〗^(-1)⁡〖〖〖(R〗_n T〗^→⋅〖R_n E〗^→)) 〗 〖〖(R〗_n T〗^→×〖R_n E〗^→)$
-Equation 1
-In Equation 1, \begin{figure}[hbtp]
 
-[Rn E] denotes the current rotation of the vector, and [x,y,z] is a restriction vector. The restriction is a unit vector (for example [0,0,1]), when multiplied by the new rotation vector it effectively removes any rotation from two of the axes, allowing rotation to happen only around one.
- \begin{figure}[hbtp]
+One addition to the algorithm is the implementation of a restriction vector. The restriction is a unit vector (for example [0,0,1]), when multiplied by the new rotation vector it effectively removes any rotation from two of the axes, allowing rotation to happen only around one. This allows for more realistic movement by not allowing joints to rotate in unnatural ways.
+ \begin{figure}[h]
  \centering
  \includegraphics[scale=1]{CCDBlueprint.png}
- \caption{•}
+ \caption{Blueprint that changes the rotation of object to position the end-effector closest to the desired position}
  \end{figure}
  
-Figure 2 Blueprint that changes the rotation of object to position the end-effector closest to the desiered position.
-Because Unreal engine does not allow for easy manipulation of dedicated bone structures in real time a hierarchical joint system was used instead. Each joint share a parent child relationship with other joints is the chain, any changes made to the transform of a parent joint affects all of its children.
+Figure 2 Blueprint that changes the rotation of object to position the end-effector closest to the desired position.
+Because Unreal engine does not allow for easy manipulation of dedicated bone structures in real time a hierarchical joint system was used instead. Each joint share a parent child relationship with other joints in the chain, any changes made to the transform of a parent joint affects all of its children.
 
 
 [1] K. W. Chin, B. R. von Konsky and A. Marriott, “Closed-form and generalized inverse kinematics solutions for the analysis of human motion,” Int. Conf. IEEE Eng. Med. Bio. Soc. 5, 1911–1914 (1997).
