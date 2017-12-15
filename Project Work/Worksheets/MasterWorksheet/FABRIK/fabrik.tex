@@ -1,16 +1,18 @@
 \section{FABRIK}
 
-Forwards and Backwards Reaching Inverse Kinematics (FABRIK) is an algorithm that efficiently solves inverse kinematics for a number of joints in a system. Being a heuristic model, FABRIK avoids solving rotational matrices as conventional IK solvers, and instead translate the joints to a point on a line. This results in low computational requirements and and therefore faster computational speeds. A table comparing FABRIK to other IK solvers is shown in Figure \autoref{fig:table}. 
+Forwards and Backwards Reaching Inverse Kinematics (FABRIK) is an algorithm that efficiently solves inverse kinematics for a number of joints in a system. Being a heuristic model, FABRIK avoids solving rotational matrices as conventional IK solvers, and instead translate the joints to a point on a line. This results in low computational requirements and and therefore faster computational speeds. A table comparing FABRIK to other IK solvers is shown in \autoref{fig:table}. 
 
 \begin{table}[H]
 \centering
 \label{fig:table}
+\resizebox{\textwidth}{!}{
 \begin{tabular}{l|llll}
        & \textbf{Number of iterations} & \textbf{Matlab exe. time (sec)} & \textbf{Time per iteration (msec)} & \textbf{Iteration per second} \\ \hline
 FABRIK & 15.461                        & 0.01328                         & 0.86                               & 1164                          \\
 CCD    & 26.308                        & 0.12356                         & 4.69                               & 213                           \\
 FTL    & 21.125                        & 0.002045                        & 0.97                               & 1033                          \\ \hline
 \end{tabular}
+}
 \caption{Average results from different IK methods for a system with 10 joints}
 \end{table}
 
@@ -26,7 +28,7 @@ Figure \ref{fig:ab} shows an example of a system consisting of four bones and an
 The FABRIK algorithm starts by adding all bone lengths together to determine if the target is reachable or not. 
 As FABRIK is a heuristic bone translation algorithm it starts at the end effector P4 and sets its position to the target's position as seen in Figure \ref{fig:ab}. The new heuristic joint is called P'4 
 
-\begin{figure}[hbtp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{FABRIK/ab}
 \caption{First to stages in FABRIK; calculating positions based on end effector position and bone lengths}
@@ -39,7 +41,7 @@ $P'3 = (\hat{P3} - \hat{P4}) * d_{3}$
 
 This procedure is then repeated for each bone in the system, creating a heuristic position for all joints, as seen in Figure \ref{fig:cd}. This results in the root bone(P1) being translated as well. 
 
-\begin{figure}[hbtp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{FABRIK/cd}
 \caption{Position of all joints are being recalculated, resulting in a slight offset from the root bone's original position}
@@ -48,7 +50,7 @@ This procedure is then repeated for each bone in the system, creating a heuristi
 
 The root joint is then moved back to its initial position and the same process now repeats in the other direction (root to outer joint) as seen in Figure \ref{fig:ef}.
 
-\begin{figure}[hbtp]
+\begin{figure}[H]
  \centering
  \includegraphics[width=1\textwidth]{FABRIK/ef}
  \caption{The same process now repeats, now where the root bone is moved back to its original position. These processes repeat until the end effector is within a set distance to the target}
@@ -67,6 +69,7 @@ For implementation purposes, Unreal's Poseable Mesh blueprint was used to transl
 \begin{table}[]
 \centering
 \caption{Table of the important variables of FABRIK}
+\resizebox{\textwidth}{!}{
 \begin{tabular}{l|lll}
 \rowcolor[HTML]{BBDAFF} 
 {\color[HTML]{000000} \textbf{Name of Variable}} & {\color[HTML]{000000} \textbf{Type}} & {\color[HTML]{000000} \textbf{Use}}                                                                                                                                                                                            & {\color[HTML]{000000} \textbf{Static}} \\ \hline
@@ -80,6 +83,7 @@ For implementation purposes, Unreal's Poseable Mesh blueprint was used to transl
                                                  &                                      &                                                                                                                                                                                                                                &                                        \\
                                                  &                                      &                                                                                                                                                                                                                                &                                       
 \end{tabular}
+}
 \label{tab:table}
 \end{table}
 
@@ -97,7 +101,7 @@ Backwards handles the heuristics of the algorithm and the flow of this program c
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\textwidth]{FABRIK/Flowchart.png}
+\includegraphics[width=0.9\textwidth]{FABRIK/Flowchart.png}
 \caption{Caption here}
 \label{fig:flow}
 \end{figure}
@@ -107,7 +111,7 @@ Backwards handles the heuristics of the algorithm and the flow of this program c
 The results of this implementation is seen in \autoref{fig:results}. It is clear that the implementation did not work as intended, as a small movement of the target transforms the bones with this magnitude. This is the case no matter what direction the target is moved. 
 
 
-\begin{figure}[hbtp]
+\begin{figure}[H]
 \begin{subfigure}[b]{0.48\textwidth}
 \includegraphics[width=1\textwidth]{FABRIK/Robot_state1.PNG}
 \caption{The robot and its bones in one state with the target visible}
