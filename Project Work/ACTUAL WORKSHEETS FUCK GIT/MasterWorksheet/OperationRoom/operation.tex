@@ -1,0 +1,105 @@
+\chapter*{Observing Operation}
+
+\section*{Purpose}
+The purpose of this field study is to observe the context to be simulated. This is done to asses of what must be included in the design.
+
+\section*{Method}
+A contextual inquiry is conducted to collect information resulting in different analysis models.
+To analyse and retrieve information in the matter the main method used is a contextual inquiry. This includes the different analysing models and interviews. We observed a robot assisted surgery at Aalborg University Hospital performed on a living human being.
+
+The observation team took both pictures, notes, and some video from the operation. These illustrate the tasks and teamwork necessary to perform such an operation and were used to create different models used in contextual inquiries. The models used are; a physical model showing the layout of the room, a sequence model to clarify the work flow, and an artefact model showing objects used during the procedure.
+
+\section*{Results}
+The physical model shows the layout of the operation room and the personnel's workspaces. The figure includes doors and their movement as well as other objects. The layout is shown in \autoref{fig:layout}.
+
+\begin{figure}[hpbt]
+	\centering
+	\includegraphics[width=0.75\textwidth]{OperationRoom/physical}
+	\caption{The phyiscal model showing the layout of the operation room}
+	\label{fig:layout}
+\end{figure}
+
+The physical enables the development and design of the room when creating the simulation.\\
+
+The sequence model is based on Jane Petersson's worksheet used in team training at MUIC. The sequence model is shown in \autoref{fig:sequence}.
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.6\textwidth]{OperationRoom/sequencemodel}
+	\caption{Flowchart of the sequence model showing how the operation preparation and debrief is carried out}
+	\label{fig:sequence}
+\end{figure}
+
+The sequence model describes the actions necessary to both start the operation and to end it. This enables the design of the tasks which should be included in the simulation and their order of appearance to the user.
+The model shown is for an operation without any complications, which could lead to de-docking of the robot in an emergency.\\
+
+
+The Artefact models are shown in figures \ref{fig:drapes}, \ref{fig:camera}, \ref{fig:cam_close}, \ref{fig:port}, and \ref{fig:tools}. These are created from pictures taken during the observation. \autoref{fig:drapes} shows the plastic drapes used to cover the arms of the robot sterilising it. \autoref{fig:camera} shows the endoscopic camera during calibration. \autoref{fig:cam_close} shows the endoscopic camera up close. \autoref{fig:port} shows one of the ports used to insert the tools into the patient. \autoref{fig:tools} shows the tools used with the robot.
+
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{OperationRoom/drapes.pdf}
+	\caption{The drapes used to cover the arms of the robot, sterilising them}
+	\label{fig:drapes}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{OperationRoom/camera.pdf}
+	\caption{The camera used with the robot and a calibration tool}
+	\label{fig:camera}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{OperationRoom/camera_close}
+	\caption{The endoscopic camera up close}
+	\label{fig:cam_close}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{OperationRoom/port}
+	\caption{One of the ports used to insert the tools in the patient}
+	\label{fig:port}
+\end{figure}
+
+\begin{figure}[hbpt]
+	\centering
+	\includegraphics[width=0.4\textwidth]{OperationRoom/tools}
+	\caption{The tools used with the robot}
+	\label{fig:tools}
+\end{figure}
+
+\section*{Conclusion}
+The physical model provides both information regarding the physical layout of the simulation to be developed, as well as a limitation of the implementable of the scenarios. 
+
+The sequence model outlines the entire scenario from which tasks must be implemented, as well as providing an overview of important tasks to include in the simulation.
+
+The artefact model also shows which tools are important for the simulation to look realistic.
+
+\newpage
+
+\appendix % Start of appendix
+\section*{Notes Taken During the Observation}
+\begin{itemize}
+	\item If you are not sterile, you have to stand at least one meter from sterile objects.
+	\item The tables covered in green paper blankets are sterile.
+	\item When preparing tools and unpacking, two nurses works together. One non-sterile nurse unpacks while the other, sterile, nurse grabs and places the tools on the sterile table.
+	\item The sterile nurse sterilises the robot.
+	\item When the patient enters the room he is firstly laid down on the operating table and then prepared for surgery.
+	\item The stereoscopic camera is wrapped separately from the robot and other tools.
+	\item When all sterile tools are placed, the sterile table is covered.
+	\item The camera is calibrated by the sterile nurse. This is done using different kinds of end pieces and rotating them around scopes.
+	\item The arms of the robot must be placed in a specific order. This is to avoid any kind of collision of the arms. Furthermore, the placement of the arms is as important as the order. This is done before the robot is docked.
+	\item  Before the robot is docked, the nurses taking part in the operation are sterilising.
+	\item When the robot is docked the arms are once again placed, this time around the ports inserted on the patient.
+	\item A time out is taken before any cutting securing everyone and everything is ready and in place.
+	\item The first cut done on the patient is to expand his stomach using air, easing the operation as this will yield more space.
+	\item Before docking the camera on the robot it is used hand held to insert the other instruments and afterwards docked on the dedicated robot arm.
+	\item When the camera is docked the robot arms are placed as far apart as possible. This is done to avoid collision.
+	\item Each arm has three buttons enabling arm movement in two different ways.
+	\item Cleaning of the optics is done several times during the operation. it may even be changed for another if it is too dirty.
+	\item Communication during operation is somewhat an issue as the original speaker system made for this kind of surgery is broken. Instead, a small speaker and bad microphone is used.
+\end{itemize}

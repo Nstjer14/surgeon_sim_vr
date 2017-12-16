@@ -1,0 +1,57 @@
+%%  A simple AAU report template.
+%  2014-09-13 v. 1.1.0
+%  Copyright 2010-2014 by Jesper Kjær Nielsen <jkn@es.aau.dk>
+\input{setup/preamble}% package inclusion and set up of the document
+\input{setup/hyphenations}% 
+\input{setup/macros}% my new macros
+%\linespread{1.3}
+
+\begin{document}
+%frontmatter
+\pagestyle{empty} %disable headers and footers
+\pagenumbering{roman} %use roman page numbering in the frontmatter
+\graphicspath { {./figures/} }
+\include{setup/frontpage}
+\pdfbookmark[0]{Contents}{label:contents}
+\tableofcontents
+\pagestyle{fancy} %enable headers and footers again
+%\listoftodos
+%\cleardoublepage
+%Glossary
+%mainmatter
+\pagenumbering{arabic} %use arabic page numbering in the mainmatter
+%\include{sections/introduction}
+
+\include{ProblemStatement/ProblemStatement}
+
+%\include{TrainingSession/training}
+
+%\include{SecondInterview/secondInterview}
+
+%\include{OperationRoom/operation}
+
+\include{FieldStudies/FieldStudies}
+
+\include{WorksheetRules/WS_Rules}
+
+\include{ModelAnim/3DAnimation}
+
+\include{Shader/shader}
+
+\include{FABRIK/fabrik}
+
+\include{CCD/CCD}
+
+\include{InternalTest/InternalTest}
+
+\include{FinishedSystem/finishedSystem}
+\newpage
+\bibliography{bib}
+\newpage
+\appendix
+\input{appendices/context_notes.tex}
+\input{appendices/interview_script.tex}
+\input{appendices/consents.tex}
+\input{appendices/reviews.tex}
+
+\end{document}
