@@ -24,9 +24,9 @@ The algorithm have been implemented according to Andreas Aristidou and Joan Lase
 FABRIK is implemented in Unreal Engine's Animation Blueprint, but as this only allows to define preset animation sequences, it cannot be used to interact with in real-time. Standard Blueprints does not allow for bone or joint transformations and therefore a Poseable Mesh has to be created from the Skeletal Mesh of the robot in order to program bone behaviour. 
 
 \section*{FABRIK Algorithm Example}
-\autoref{fig:ab} shows an example of a system consisting of four bones and an end-effector. The goal of the algorithm is to get the outermost bone $ (P4) $ as close to the end effector $ (t) $ as possible and maintaining the original distance between each bone. 
+\autoref{fig:ab} shows an example of a system consisting of four bones and an end-effector. The goal of the algorithm is to get the outermost bone $ (P_4) $ as close to the end effector $ (t) $ as possible and maintaining the original distance between each bone. 
 The FABRIK algorithm starts by adding all bone lengths together to determine if the target is reachable or not. 
-As FABRIK is a heuristic bone translation algorithm it starts at the end effector $ P4 $ and sets its position to the target's position as seen in \autoref{fig:ab}. The new heuristic joint is called $ P'4 $ 
+As FABRIK is a heuristic bone translation algorithm it starts at the end effector $ P_4 $ and sets its position to the target's position as seen in \autoref{fig:ab}. The new heuristic joint is called $ P'_4 $ 
 
 \begin{figure}[H]
 	\centering
@@ -35,14 +35,14 @@ As FABRIK is a heuristic bone translation algorithm it starts at the end effecto
 	\label{fig:ab}
 \end{figure}
 
-A line is then drawn from $ P'4 $ to $ P3 $, and since the original distance have to be maintained, $ P'3 $ is translated to somewhere on that line as seen in Figure \ref{fig:cd}. The position on the line is calculated using \autoref{eq:line_pos}
+A line is then drawn from $ P'_4 $ to $ P_3 $, and since the original distance have to be maintained, $ P'_3 $ is translated to somewhere on that line as seen in Figure \ref{fig:cd}. The position on the line is calculated using \autoref{eq:line_pos}
 
 \begin{equation}\label{eq:line_pos}
-	P'3 = (\hat{P3 - P'4}) \cdot d_{3}
+	P'_3 = (\hat{P_3 - P'_4}) \cdot d_{3}
 \end{equation}
 
 
-This procedure is then repeated for each bone in the system, creating a heuristic position for all joints, as seen in \autoref{fig:cd}. This results in the root bone $ (P1) $ being translated as well. 
+This procedure is then repeated for each bone in the system, creating a heuristic position for all joints, as seen in \autoref{fig:cd}. This results in the root bone $ (P_1) $ being translated as well. 
 
 \begin{figure}[H]
 	\centering
