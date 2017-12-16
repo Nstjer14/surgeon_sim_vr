@@ -102,7 +102,7 @@ The code is split up in four main parts:
 \item Forwards (Positioning joints)
 \end{itemize}
 
-BeginPlay initializes and calculates all of the variables in \autoref{tab:table}. OutOfReach determines if the target is out of reach and, if so, stretches all bones in the target's direction. 
+BeginPlay initializes and calculates all of the variables in \autoref{tab:blueprint}. OutOfReach determines if the target is out of reach and, if so, stretches all bones in the target's direction. 
 Backwards handles the heuristics of the algorithm and the flow of this program can be seen in Figure \ref{fig:flow}. Forwards then calculates the real position of the joint and sets the position of the joints in world space. Forwards look like the flow in Figure \ref{fig:flow} the only difference being a positive for loop and the order in the "pos" calculation.
 
 \begin{figure}[H]
@@ -124,8 +124,8 @@ The results of this implementation is shown in \autoref{fig:results}. It is clea
 	\begin{subfigure}[b]{0.48\textwidth}
 	\includegraphics[width=\textwidth]{FABRIK/Robot_state2.PNG}
 	\caption{The robot in another state where the target has moved slightly}
-	\end{subfigure}
 	\label{fig:results}
+	\end{subfigure}
 \end{figure}
 
 
